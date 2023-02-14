@@ -8,6 +8,22 @@
  <style>
     .submitBtn {
         float:right;
+        transition-property: background-color;
+      transition-duration: 1s;
+      transition-timing-function: ease-out;
+        transition-delay: 0s;
+    }
+
+    .submitBtn:hover {
+      background-color: darkblue;
+    }
+
+    .cancelBtn:hover {
+      background-color:black;
+    }
+    .lbl {
+
+      font-size:16px;
     }
  </style>
     <title>The Greatest Coffee Cake</title>
@@ -44,32 +60,52 @@
 
 </div>
 
-<form class="form-horizontal">
+<form>
     <fieldset>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
       <legend>Make your own Coffee Cake!</legend>
-      <div class="form-group">
-        <div class="col-md-6 col-md-offset-2">
-      <label>Name</label>
-      <input type="text" class="form-control">
     </div>
-      </div>
-      
+    </div>
       <div class="form-group">
-        <label for="select" class="col-lg-2 control-label">Toppings</label>
-        <div class="col-lg-10">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+        <label for="select" class="lbl">Toppings</label>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-md-6 col-md-offset-3">
           <select class="form-control" id="select">
             <option>Chocolate Chips</option>
             <option>Raspberries</option>
             <option>Cinnamon Sugar</option>
+            <option>Maple Syrup</option>
+            <option>Whipped Cream</option>
           </select>
           <br>
-        
         </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+        <label for="select" class="lbl">Choose if you want your coffee cake to be warm or frozen</label>
       </div>
+    </div>
+      <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+          <select class="form-control" id="select">
+            <option>Hot</option>
+            <option>Frozen</option>
+          </select>
+          <br>
+        </div>
+        </div>
+        
+       
       <div class="form-group">
         <div class="col-lg-10 col-lg-offset-2">
-          <button type="reset" class="btn btn-default">Cancel</button>
-          <button type="submit" class="btn btn-primary submitBtn">Order</button>
+          <button type="reset" class="btn btn-default cancelBtn" data-inline="true">Cancel</button>
+          <button type="submit" class="btn btn-info submitBtn" style="float:right;" data-inline="true">Order</button>
         </div>
       </div>
     </fieldset>
