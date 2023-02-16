@@ -1,0 +1,37 @@
+.image-container {
+    position: relative;
+    left: 60%;
+}
+
+.image-text {
+    position: absolute;
+    top: 40%;
+    left: -30%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+}
+
+  
+.column {
+    flex: 1;
+}
+
+.animated-image {
+    animation-name: slide-down;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+ }
+ 
+ @keyframes slide-down {
+    from {
+       transform: translateY(-100%);
+    }
+    to {
+       transform: translateY(0%);
+    }
+ }
+
+h1 {
+    font-family: Georgia;
+ }
