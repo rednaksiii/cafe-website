@@ -25,45 +25,86 @@
 
       font-size:16px;
     }
+
+   .jumbotron {
+    background-color:#362417;
+
+   }
+
+   .navbar {
+    background-color:#362417;
+   }
+
+   .panel-heading {
+    background-color:#04030f;
+   }
+    
  </style>
     <title>The Greatest Coffee Cake</title>
 </head>
 <body>
-<div class="container-fluid">
+  <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+       <a class="navbar-brand" href="#">Team One Cafe</a>
+      </div>
+       <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Browse</a></li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">About Us</a></li>
+       </ul>
+    </nav>
+ </div>
+ <div class="row">
+ <div class="col-md-3 text-center">
+  <div class="panel panel-default">
+     <div class="panel-heading">
+        <h3 class="panel-title">Recommendations</h3>
+     </div>
+     <div class="panel-body">
+        <ul class="list-group">
+           <li class="list-group-item">Coffee cake</li>
+           <li class="list-group-item">Hot chocolate</li>
+           <li class="list-group-item">Cake</li>
+           <li class="list-group-item">Turkish tea</li>
+           <li class="list-group-item">Baklava</li>
+        </ul>
+     </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+<div class="container">
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-    <h1>The Most Delicious Coffee Cake</h1>
+  <div class="col-md-8">
+  <div class="image-text">
+    <div class="col-md-4 col-md-offset-2">
+    <p>The Most Delicious Coffee Cake<p>
     </div>
 </div>
-</div>
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
+<div class="image-container text-center">
     <img src="images/CoffeeCakeTransparent.png" alt="Coffee Cake">
 </div>
 </div>
 </div>
-<div class="container-fluid">
-<div class="row">
-    <div class="col-md-6 col-md-offset-3 description">
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
     <strong>Description:</strong>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Donec malesuada urna sit amet quam iaculis vestibulum. 
-         Vivamus massa tortor, ultrices ut accumsan sit amet, ultrices eget nulla.
-          Sed tristique nisi sed nunc efficitur varius.
-           Praesent tristique augue quam, ac malesuada augue laoreet ultrices.
-            Etiam et elit accumsan, faucibus est convallis, bibendum nibh. Integer tellus arcu, pellentesque nec massa sit amet, scelerisque molestie est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum tortor sapien, vitae luctus ligula aliquet at. Fusce quis dolor vel justo eleifend fringilla. Phasellus id vestibulum felis, ut venenatis tellus. Pellentesque venenatis risus ut diam congue, ut rhoncus enim laoreet. Aliquam varius pretium purus a consectetur. Vestibulum ornare, dui non sollicitudin rhoncus, metus dolor ultrices turpis, id aliquet orci libero nec lectus. Mauris quis quam venenatis, viverra nisi non, pretium ipsum. 
-        Etiam vitae rhoncus leo. Proin nunc ipsum, sollicitudin vitae lobortis sed, vulputate sit amet eros.</p>
+    <p>Make your own coffee cake, with streusel, whipped cream, cinnamon sugar, and more!
+      Our coffee cake is made with the freshest ingredients. It is bigger than any coffee cake you will find
+    anywhere else. It is our unique specialty in the Midwest, and you will not be disappointed.
+    </p>
 </div>
 </div>
 
-
 </div>
-
+</div>
+<div class="row">
 <form>
     <fieldset>
       <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-6 col-md-offset-2">
       <legend>Make your own Coffee Cake!</legend>
     </div>
     </div>
@@ -100,15 +141,16 @@
           <br>
         </div>
         </div>
-        
-       
+      </div>
+    </div>
       <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
+        <div class="pull-right">
           <button type="reset" class="btn btn-default cancelBtn" data-inline="true">Cancel</button>
-          <button type="submit" class="btn btn-info submitBtn" style="float:right;" data-inline="true">Order</button>
+          <button type="submit" class="btn btn-info submitBtn" data-inline="true">Order</button>
         </div>
       </div>
     </fieldset>
   </form>
+</div>
 </body>
 </html>
