@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Fruit Smoothies</title>
+   <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="megarecess.css">
+</head>
+<h6>
+    <img src="images/logo2.png" alt="Logo">
+    <p class="CafeName">Team One Cafe</p>
+</h6>
+<body>
+   <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+         <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Browse</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">About Us</a></li>
+         </ul>
+      </nav>
+      <div class="row">
+         <div class="col-md-3">
+            <div class="panel panel-default" style="background-color:black">
+               <div class="panel-heading" style="background-color:#362417">
+                  <h3 class="panel-title">Recommendations</h3>
+               </div>
+               <div class="panel-body">
+                  <ul class="list-group" style="background-color:#362417">
+                     <li class="list-group-item" style="background-color:#a9927d">Reese's Pie</li>
+                     <li class="list-group-item" style="background-color:#92817a">Dipped Apple</li>
+                     <li class="list-group-item" style="background-color:#a9927d">Protein Shakes</li>
+                     <li class="list-group-item" style="background-color:#92817a">Fruit Smoothies</li>
+                     
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="jumbotron" style="background-color:#a9927d">
+               <div class="image-container">
+                <img src="images/strawsmooth.png" width="150px" alt="Reeses pie" class="animated-image">
+                <div class="image-text">
+                   <h1>Fruit Smoothies!</h1>
+                </div>
+                </div>
+                <br>
+               <p>
+                Locally sourced with an eye for quality, our daily blended fruit smoothies will boost 
+                any day a step higher. Packed full of natural vitamins, these smooth drinks will keep
+                your energy high and your calories low!
+               </p>
+               <form method="post" action="order.php">
+                    <fieldset>
+                        <legend>Size</legend>
+                        <select name="size" style="color:black">
+                            <option style="color:grey" value="null">Select</option>
+                            <option style="color:black">Small (12oz)</option>
+                            <option style="color:black">Med (16oz)</option>
+                            <option style="color:black">Large (20oz)</option>
+                            <option style="color:black">XLarge (24oz)</option>
+                        </select>
+                        <button style="color:black">Add to Order</button>
+                        <button style="color:black">Cancel</button>
+
+                    </fieldset>
+               </form>
+               <h2>Choice Of Fruit</h2>
+               <div class="row">
+                <div class="col-md-2">
+                    <img src="images/strawsmooth.png" height="200" width="75" alt="carmel">
+                     <h5>Strawberry</h5>
+                     <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"
+                              aria-hidden="true"></span> Add
+                     </button>
+                </div>
+                <div class="col-md-2">
+                     <img src="images/bananasmooth.png" height="200" width="95" alt="chocolate">
+                     <h5>Banana</h5>
+                     <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"
+                              aria-hidden="true"></span> Add
+                     </button>
+                </div>
+                <div class="col-md-2">
+                    <img src="images/blackbersmooth.png" height="200" width="90" alt="candy">
+                    <h5>Blackberry</h5>
+                    <button type="button" class="btn btn-success">
+                       <span class="glyphicon glyphicon-shopping-cart"
+                             aria-hidden="true"></span> Add
+                    </button>
+               </div>
+               <div class="col-md-2">
+                  <img src="images/Grapesmooth.png" height="200" width="90" alt="candy">
+                  <h5>Grape</h5>
+                  <button type="button" class="btn btn-success">
+                     <span class="glyphicon glyphicon-shopping-cart"
+                           aria-hidden="true"></span> Add
+                  </button>
+             </div>
+             <div class="col-md-2">
+               <img src="images/pineappsmooth.png" height="180" width="90" alt="candy">
+               <h5>Pineapple</h5>
+               <button type="button" class="btn btn-success">
+                  <span class="glyphicon glyphicon-shopping-cart"
+                        aria-hidden="true"></span> Add
+               </button>
+          </div>
+            </div>
+            
+        </div>
+        </div>
+      </div>
+   </div>
+</body>
+</html>

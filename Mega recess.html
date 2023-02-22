@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Reese's Pie</title>
+   <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="megarecess.css">
+</head>
+<h6>
+    <img src="images/logo2.png" alt="Logo">
+    <p class="CafeName">Team One Cafe</p>
+</h6>
+<body>
+   <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+         <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Browse</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">About Us</a></li>
+         </ul>
+      </nav>
+      <div class="row">
+         <div class="col-md-3">
+            <div class="panel panel-default" style="background-color:black">
+               <div class="panel-heading" style="background-color:#362417">
+                  <h3 class="panel-title">Recommendations</h3>
+               </div>
+               <div class="panel-body">
+                  <ul class="list-group" style="background-color:#362417">
+                     <li class="list-group-item" style="background-color:#a9927d">Reese's Pie</li>
+                     <li class="list-group-item" style="background-color:#92817a">Dipped Apple</li>
+                     <li class="list-group-item" style="background-color:#a9927d">Protein Shakes</li>
+                     <li class="list-group-item" style="background-color:#92817a">Fruit Smoothies</li>
+                     
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-9">
+            <div class="jumbotron" style="background-color:#a9927d">
+               <div class="image-container">
+                <img src="images/reesespieimage.png" width="500px" alt="Reeses pie" class="animated-image">
+                <div class="image-text">
+                   <h1>Reese's Pie</h1>
+                </div>
+                </div>
+                <br>
+               <p>
+                A legendary pie build upon the foundations of gods.
+                This cake will simply blow the minds of all who dare 
+                to try. The perfect mix of chocolate and peanut butter
+                turned up to 11. A must have if you wish to dine your last!
+               </p>
+               <form method="post" action="order.php">
+                    <fieldset>
+                        <legend>Make the Plunge</legend>
+                        <select name="size" style="color:black">
+                            <option style="color:grey" value="null">Select</option>
+                            <option style="color:black">1 lb</option>
+                            <option style="color:black">2 lb</option>
+                            <option style="color:black">4 lb</option>
+                            <option style="color:red">Family Killer</option>
+                        </select>
+                        <button style="color:black">Add to Order</button>
+                        <button style="color:black">Cancel</button>
+
+                    </fieldset>
+               </form>
+               <h2>Customizations</h2>
+               <div class="row">
+                <div class="col-md-2">
+                    <img src="images/whiiped.png" height="50" width="50" alt="Whipped Cream">
+                     <h5>Whipped Cream</h5>
+                     <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"
+                              aria-hidden="true"></span> Add
+                     </button>
+                </div>
+                <div class="col-md-2">
+                     <img src="images/chocoo.png" height="50" width="50" alt="Chocolate sauce">
+                     <h5>Chocolate Sauce</h5>
+                     <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"
+                              aria-hidden="true"></span> Add
+                     </button>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+      </div>
+   </div>
+</body>
+</html>
