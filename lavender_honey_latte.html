@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" name= "viewport" content="width=device-width">
+   <title>Lavender Honey Tea Latte</title>
+   <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
+   <link rel="stylesheet" href="lavenderhoneylatte_mobile.css" media="screen and (max-width:480px)" />
+   <link rel="stylesheet" href="lavenderhoneylatte_desktop.css" media="screen and (min-width:481px)" />
+   <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css"/>
+</head>
+<body>
+<main>
+	<header>
+		<img src= "images/logo2.png" alt = "logo"/>
+		<h1>Team One Cafe</h1>
+	</header>
+</main>
+	<div class="container">
+		<nav id="navbar"class="navbar navbar default" role="navigation">
+				<ul id="navi" class="nav navbar nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Menu</a></li>
+					<li><a href="#">References</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+		</nav>
+		<select id="mobilemenu">
+					<option>Home</option>
+					<option>Menu</option>
+					<option>About</option>
+					<option>References</option>
+		<br/></select>
+	<div class="row">
+	<div class="col-md-3">
+		<div class="panel panel-default">
+		<div class="panel-heading">
+			<h2 class="panel-title" id="rec">Recommendations</h2>
+		</div>
+		<div class="panel-body">
+			<ul class="list-group">
+				<li><a href="cocomac.html">Coconut Macaroons</a></li>
+				<li><a href="cinnamon_latte.html">Cinnamon Tea Latte</a></li>
+				<li><a href="chococross.html">Chocolate Croissant</a></li>
+			</ul>
+		</div>
+		</div>
+		</div>
+		<div class="col-md-9">
+			<div class="jumbotron">
+				<h3 id="lavtitle">Lavender Honey Tea Latte</h3>
+				<div class="image-container">
+				<img class="lavenderhoney" src="images/lavenderlatte.png" width= "300px" alt = "lavender honey tea latte"/>
+				</div>
+				<p id="descrip">
+					Enjoy the floral flavor of fresh lavender with the subtle sweetness of our locally sourced honey, 
+					steamed in your choice of milk and topping.
+					
+				</p>
+				<br/><p id="cals">
+					520 calories
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
+	<form method="get" action="#">
+						<fieldset>
+							<legend id="customizetitle">Customize Your Drink</legend>
+							<p class="choices">
+								<label id="choicetitle">Milk Choice: </label><br/>
+								<select name="milkopt">
+									<option>2% Milk</option>
+									<option>Whole Milk</option>
+									<option>Almond Milk</option>
+									<option>Oat Milk</option>
+									<option>No Milk</option>
+									</select>
+							</p>
+							<p class="choices">
+								<label id="choicetitle">Foam Choice: </label><br/>
+								<select name="foamopt">
+									<option>2% Milk Foam</option>
+									<option>Non-Dairy Foam</option>
+									<option>No Foam</option>
+								</select>
+							</p>
+							<p class="choices2">
+								<label id="choicetitle">Extras/Toppings: </label><br/>
+								<select name="topopt">
+									<option>Lavender Sprinkle</option>
+									<option>Sugar Cookie Dust</option>
+									<option>Honey Drizzle</option>
+									<option>No Extras/Toppings</option>
+								</select>
+							</p>
+							<br/><input id= "order" type="submit" value="Add to Order"/>
+							<input id="clear" type="reset" value="Clear" />
+						</fieldset>
+						</form>
+	</div>
+	</div>
+</div>
+</body>
+</html>
