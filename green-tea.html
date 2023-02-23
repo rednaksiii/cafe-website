@@ -13,7 +13,7 @@
       <nav class="navbar navbar-default" role="navigation">
          <a class="navbar-brand" href="#">Team One Cafe</a>
          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">Browse</a></li>
             <li><a href="#">Search</a></li>
             <li><a href="#">About Us</a></li>
@@ -22,7 +22,7 @@
       <div class="row">
          <div class="col-md-3">
             <div class="panel panel-default">
-               <div class="panel-heading">
+               <div class="panel-heading" style="background-color:#362417">
                   <h3 class="panel-title">Recommendations</h3>
                </div>
                <div class="panel-body">
@@ -56,6 +56,22 @@
                 Green tea can be enjoyed hot or cold, and there are many varieties and 
                 flavors available to suit different tastes.
                </p>
+
+               <form method="post" action="order.php">
+                  <fieldset>
+                      <legend>Size</legend>
+                      <select name="size" style="color:black">
+                          <option style="color:black">Small</option>
+                          <option style="color:black">Medium</option>
+                          <option style="color:black">Large</option>
+                          <option style="color:black">XLarge</option>
+                      </select>
+                      <button style="color:black">Add to Order</button>
+                      <button style="color:black">Cancel</button>
+
+                  </fieldset>
+               </form>
+
                <h2>Customizations</h2>
                <div class="row">
                 <div class="col-md-2">

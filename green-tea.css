@@ -23,7 +23,7 @@
     animation-fill-mode: forwards;
  }
  
- @keyframes slide-down {
+@keyframes slide-down {
     from {
        transform: translateY(-100%);
     }
@@ -35,3 +35,34 @@
 h1 {
     font-family: Georgia;
  }
+
+nav {
+    background-color:#a9927d;
+    /* background-image:url("images/coffeebean.jpg"); */
+    opacity: 0.95;
+    background-size:contain;
+}
+
+.jumbotron {
+    background-color:#a9927d;
+    opacity: 0.95;
+}
+
+.panel {
+    background-color:#a9927d;
+    opacity: 0.95;
+}
+
+.list-group-item {
+    background-color:#a9927d;
+    opacity: 0.95;
+}
+
+body {
+    background-image:url("images/wallpaper-6.jpg");
+}
+
+.navbar {
+    background-color:#362417;
+    opacity: 0.90;
+}
