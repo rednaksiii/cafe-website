@@ -1,0 +1,47 @@
+.image-container {
+    position: relative;
+    left: 60%;
+}
+
+.image-text {
+    position: absolute;
+    top: 40%;
+    left: -30%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+}
+.cafename {
+    font-size:large
+}
+.column {
+    flex: 1;
+}
+h6 {
+    margin:0;
+    background-color:white;
+    background-image:url("images/coffeebean.jpg");
+    background-size:contain;
+    font-size:2em;
+}
+.animated-image {
+    animation-name: slide-down;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+ }
+ 
+ @keyframes slide-down {
+    from {
+       transform: translateY(-100%);
+    }
+    to {
+       transform: translateY(0%);
+    }
+ }
+
+body {
+    font-family: Georgia;
+ }
+.container {
+    width:80%;
+}
