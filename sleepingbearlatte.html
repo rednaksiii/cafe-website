@@ -3,73 +3,183 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
  <style>
     .submitBtn {
         float:right;
+        transition-property: background-color;
+      transition-duration: 1s;
+      transition-timing-function: ease-out;
+        transition-delay: 0s;
     }
+
+    .submitBtn:hover {
+      background-color: darkblue;
+    }
+
+    .cancelBtn:hover {
+      background-color:black;
+    }
+    .lbl {
+
+      font-size:16px;
+    }
+
+   .jumbotron {
+    background-color:#362417;
+
+   }
+
+   .navbar {
+    background-color:#362417;
+   }
+
+   .panel-heading {
+    background-color:#04030f;
+   }
+
+   .list-group-item{
+    background-color:#a9927d;
+   } 
+
+   .recommendations {
+    color:#362417;
+   }
+
+li:active {
+    background-color:#a9927d;
+   }
+    
+   .panel-body {
+    background-color:#a9927d;
+   }
+
+   .panel-default>.panel-heading {
+    background-color:#04030f;
+   }
+   li.active {
+    background-color:#a9927d;
+   }
+
+  header {
+    background-color:white;
+    background-image:url("images/coffeebean.jpg");
+    background-size:contain;
+   }
+  
+   
  </style>
-    <title>Sleeping Bear Latte</title>
+    <title>Pecan Pie</title>
 </head>
 <body>
-<div class="container-fluid">
+  <div class="container-fluid">
+    <div class="row">
+      <header>
+      <img src="images/logo2.png" alt="logo">
+      <h2>Team One Cafe</h2>
+    </header>
+    </div>
+    <div class="row">
+    <nav class="navbar navbar-default" role="navigation">
+       <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="index.html">Menu</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+       </ul>
+    </nav>
+  </div>
+ </div>
+ <div class="row">
+ <div class="col-md-3 text-center">
+  <div class="panel panel-default">
+     <div class="panel-heading">
+        <h3 class="panel-title">Recommendations</h3>
+     </div>
+     <div class="panel-body">
+        <ul class="list-group">
+           <li class="list-group-item"><a class="recommendations" href="coffeecake.html">Coffee cake</a></li>
+           <li class="list-group-item"><a class="recommendations" href="hotchocolate.html">Hot chocolate</a></li>
+           <li class="list-group-item"><a class="recommendations" href="pecanpie.html">Pecan Pie</a></li>
+           <li class="list-group-item"><a class="recommendations" href="sleepingbearlatte.html">Sleeping Bear Latte</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+<div class="col-md-8">
+<div class="jumbotron">
+<div class="container">
 <div class="row">
+
+  <div class="image-text">
+    <div class="col-md-4 col-md-offset-2">
+      <legend>Have a steaming Sleeping Bear Latte!</legend>
+    </div>
+</div>
+<div class="image-container text-center">
+    <img src="images/Sleeping Bear Latte Transparent.png" alt="Coffee Cake">
+</div>
+</div>
+</div>
+<div class="container">
     <div class="col-md-6 col-md-offset-3">
-    <h1>Sleeping Bear Latte</h1>
-    </div>
+    <p>Wanting to relax after a long day at work? Our sleeping bear latte will do just that. With your choice of marshmallows, 
+      whipped cream, graham cracker crumble, and cookie crumble, you can be sure that our sleeping bear latte will put you at ease.
+    </p>
 </div>
 </div>
-<div class="container-fluid">
+</div>
+</div>
+</div>
 <div class="row">
-<div class="col-md-6 col-md-offset-3">
-    <img src="images/Sleeping Bear Latte Transparent.png" alt="Sleeping Bear Latte" width="600px" height="500px">
-</div>
-</div>
-</div>
-<div class="container-fluid">
-<div class="row">
-    <div class="col-md-6 col-md-offset-3 description">
-    <strong>Description:</strong>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-         Donec malesuada urna sit amet quam iaculis vestibulum. 
-         Vivamus massa tortor, ultrices ut accumsan sit amet, ultrices eget nulla.
-          Sed tristique nisi sed nunc efficitur varius.
-           Praesent tristique augue quam, ac malesuada augue laoreet ultrices.
-            Etiam et elit accumsan, faucibus est convallis, bibendum nibh. Integer tellus arcu, pellentesque nec massa sit amet, scelerisque molestie est. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum tortor sapien, vitae luctus ligula aliquet at. Fusce quis dolor vel justo eleifend fringilla. Phasellus id vestibulum felis, ut venenatis tellus. Pellentesque venenatis risus ut diam congue, ut rhoncus enim laoreet. Aliquam varius pretium purus a consectetur. Vestibulum ornare, dui non sollicitudin rhoncus, metus dolor ultrices turpis, id aliquet orci libero nec lectus. Mauris quis quam venenatis, viverra nisi non, pretium ipsum. 
-        Etiam vitae rhoncus leo. Proin nunc ipsum, sollicitudin vitae lobortis sed, vulputate sit amet eros.</p>
-</div>
-</div>
-
-
-</div>
-
-<form class="form-horizontal">
+<form>
     <fieldset>
-      <legend>Make your own Latte!</legend>
-      <div class="form-group">
+      <div class="row">
         <div class="col-md-6 col-md-offset-2">
-      <label>Name</label>
-      <input type="text" class="form-control">
+      <legend>Make your own Sleeping Bear Latte!</legend>
     </div>
-      </div>
-      
+    </div>
       <div class="form-group">
-        <label for="select" class="col-lg-2 control-label">Toppings</label>
-        <div class="col-lg-10">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+        <label for="select" class="lbl">Toppings</label>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-md-6 col-md-offset-3">
           <select class="form-control" id="select">
-            <option>Chocolate Chips</option>
+            <option>Streusel</option>
             <option>Raspberries</option>
             <option>Cinnamon Sugar</option>
+            <option>Maple Syrup</option>
+            <option>Whipped Cream</option>
           </select>
           <br>
-        
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+        <label for="select" class="lbl">Choose if you want your coffee cake to be warm or frozen</label>
+      </div>
+    </div>
+      <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+          <select class="form-control" id="select">
+            <option>Hot</option>
+            <option>Frozen</option>
+          </select>
+          <br>
+        </div>
         </div>
       </div>
+    </div>
       <div class="form-group">
-        <div class="col-lg-10 col-lg-offset-2">
-          <button type="reset" class="btn btn-default">Cancel</button>
-          <button type="submit" class="btn btn-primary submitBtn">Order</button>
+        <div class="pull-right">
+          <button type="reset" class="btn btn-default cancelBtn" data-inline="true">Cancel</button>
+          <button type="submit" class="btn btn-info submitBtn" data-inline="true">Order</button>
         </div>
       </div>
     </fieldset>
