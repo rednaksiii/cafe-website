@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Baklava</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="green-tea.css">
+</head>
+<body>
+   <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+         <a class="navbar-brand" href="#">Team One Cafe</a>
+         <ul class="nav navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Browse</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">About Us</a></li>
+         </ul>
+      </nav>
+      <div class="row">
+         <div class="col-md-3">
+            <div class="panel panel-default">
+               <div class="panel-heading" style="background-color:#362417">
+                  <h3 class="panel-title">Recommendations</h3>
+               </div>
+               <div class="panel-body">
+                  <ul class="list-group">
+                     <li class="list-group-item">Coffee cake</li>
+                     <li class="list-group-item">Hot chocolate</li>
+                     <li class="list-group-item">Cake</li>
+                     <li class="list-group-item">Turkish tea</li>
+                     <li class="list-group-item">Baklava</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-9">
+            <div class="jumbotron">
+               <div class="image-container">
+                <img src="images/baklava.png" width="300px" alt="Green tea" class="animated-image">
+                <div class="image-text">
+                   <h1>Baklava</h1>
+                </div>
+                </div>
+                <br>
+               <p>
+                Baklava is a layered pastry dessert made of filo pastry, 
+                filled with chopped nuts, and sweetened with syrup or honey. 
+                It was one of the most popular sweet pastries of Ottoman cuisine
+               </p>
+
+               <form method="post" action="order.php">
+                  <fieldset>
+                      <legend>Size</legend>
+                      <select name="size" style="color:black">
+                          <option style="color:black">Small</option>
+                          <option style="color:black">Medium</option>
+                          <option style="color:black">Large</option>
+                          <option style="color:black">XLarge</option>
+                      </select>
+                      <button style="color:black">Add to Order</button>
+                      <button style="color:black">Cancel</button>
+
+                  </fieldset>
+               </form>
+
+               <h2>Customizations</h2>
+               <div class="row">
+                <div class="col-md-2">
+                    <img src="images/pistachio.png" height="50" width="50" alt="Pistachio">
+                     <h5>Pistachio</h5>
+                     <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"
+                              aria-hidden="true"></span> Add
+                     </button>
+                </div>
+                <div class="col-md-2">
+                     <img src="images/almonds.png" height="50" width="50" alt="Almonds">
+                     <h5>Almonds</h5>
+                     <button type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"
+                              aria-hidden="true"></span> Add
+                     </button>
+                </div>
+               <div class="col-md-2">
+                <img src="images/wallnut.png" height="50" width="50" alt="Wallnut">
+                 <h5>Wallnut</h5>
+                 <button type="button" class="btn btn-success">
+                    <span class="glyphicon glyphicon-shopping-cart"
+                          aria-hidden="true"></span> Add
+                 </button>
+            </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
