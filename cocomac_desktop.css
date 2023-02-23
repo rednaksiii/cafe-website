@@ -1,0 +1,167 @@
+/* Amber Awadi
+Coconut Macaroon Desktop CSS Page*/
+
+header
+{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+	vertical-align: baseline;
+	border: 0;
+	background-color: white;
+	background-image: url("images/coffeebean.jpg");
+	background-size: contain;
+	color: white;
+}
+
+#navbar {
+	background-color: #F1DABF;
+	border: 4mm ridge rgba(54, 36, 23, 1);
+	padding: 2px;
+	padding-bottom: 0;
+
+	
+}
+
+#navi {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	color: #362417!important;
+}
+
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+	font-size: 16px;
+}
+
+li {
+	float: left;
+}
+
+li a{
+	display: block;
+	text-align: center;
+	padding: 12px 14px;
+	color: #362417;
+}
+
+li a:hover {
+	color: #F1DABF;
+}
+
+.list-group {
+	float: left;
+}
+
+#mobilemenu {
+	
+	display: none;
+}
+
+a:link {
+	color: #362417 !important;
+	font-size: 16px;
+}
+
+a:visited {
+	color: #362417;
+}
+
+.panel-heading {
+	background-color: #362417 !important;
+	color: white;
+	border: 4mm ridge rgba(54, 36, 23, 1);
+}
+
+#rec {
+	font-size: 18px;
+	color: white;
+	font-style: bold;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+}
+
+.panel-body {
+	background-color: white;
+	background-image: url("images/tanstripes.jpg");
+	background-size: contain;
+	border: 4mm ridge rgba(54, 36, 23, 1);
+}
+
+.jumbotron {
+	position: relative;
+	float: right;
+	border: 4mm ridge rgba(54, 36, 23, 1);
+	background-color: #A9927D !important;
+
+}
+
+#lavtitle {
+	font-size: 24pt;
+	color: white;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+}
+
+.image-container {
+	float: right;
+	position: relative;
+}
+
+#descrip {
+	float: left;
+	font-size: 12pt;
+}
+
+#cals {
+	font-size: 8pt;
+	font-style: italic;
+	text-align: center;
+	float: right;
+}
+	
+#customizetitle{
+	font-size: 18pt;
+}
+
+#choicetitle{
+	
+	font-family: Georgia, Cambria, "Times New Roman", serif;
+	font-size: 12pt;
+	color: white;
+}
+	
+.choices {
+	font-size: 12pt;
+	color: black;
+	float:left;
+}
+
+.choices2 {
+	font-size: 12pt;
+	color: black;
+}
+
+#order {
+	color: black;
+	background-color: #04AA6D;
+	font-size: 14pt;
+	border: none;
+	border-radius: 4px;
+	padding: 12px 12px;
+	margin: 4px 2px;
+}
+
+#clear {
+	color: black;
+	background-color: #C82E2E;
+	font-size: 14pt;
+	border: none;
+	border-radius: 4px;
+	padding: 12px 12px;
+	margin: 4px 2px;
+}
