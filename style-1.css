@@ -38,19 +38,28 @@ h1 {
 
 nav {
     background-color:#a9927d;
-    /* background-image:url("images/coffeebean.jpg"); */
+   /* background-image:url("images/coffeebean.jpg"); */
     opacity: 0.95;
     background-size:contain;
+}
+
+.navbar {
+    border: 4mm ridge rgba(54, 36, 23, 1);
 }
 
 .jumbotron {
     background-color:#a9927d;
     opacity: 0.95;
+    border: 4mm ridge rgba(54, 36, 23, 1);
 }
 
 .panel {
     background-color:#a9927d;
     opacity: 0.95;
+}
+
+.panel-body {
+    border: 4mm ridge rgba(54, 36, 23, 1);
 }
 
 .list-group-item {
@@ -59,10 +68,16 @@ nav {
 }
 
 body {
-    background-image:url("images/wallpaper-6.jpg");
+    /* background-image:url("images/wallpaper-6.jpg"); */
 }
 
 .navbar {
-    background-color:#362417;
+    background-color:#4b3220;;
     opacity: 0.90;
 }
+
+/*
+.image-container {
+	float: center;
+	position: relative;
+} */
