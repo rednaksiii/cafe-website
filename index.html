@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css"/>
+  <link rel="stylesheet" href="home_mobile.css" media="screen and (max-width:480px)" />
+  <link rel="stylesheet" href="home_desktop.css" media="screen and (min-width:481px)" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -19,20 +21,20 @@
 <body>
 
 <div class="container">
-  <h2>Welcome to Team One Cafe!</h2>  
   <nav id="navbar"class="navbar navbar default" role="navigation">
 				<ul id="navi" class="nav navbar nav">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Menu</a></li>
-					<li><a href="#">References</a></li>
-					<li><a href="#">About</a></li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="catalogue.html">Menu</a></li>
+					<li><a href="references.html">References</a></li>
+					<li><a href="about.html">About</a></li>
 				</ul>
 		</nav>
+		<h2>Welcome to Team One Cafe!</h2>  
 		<select id="mobilemenu">
-					<option><a href="#">Home</a></option>
-					<option><a href="#">Menu</a></option>
-					<option><a href="#">About</a></option>
-					<option><a href="#">References</a></option>
+					<option><a href="index.html">Home</a></option>
+					<option><a href="catalogue.html">Menu</a></option>
+					<option><a href="references.html">About</a></option>
+					<option><a href="about.html">References</a></option>
 		<br/></select>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -43,17 +45,30 @@
     <div class="carousel-inner">
       <div class="item active">
 	  <a href="lavender_honey_latte.html">
-        <img src="images/lavenderlatte.png" alt="Lavender Latte" style="width:80%;">
+        <img id="featitem" src="images/lavenderlatte.png" alt="Lavender Latte">
 		</a>
 		<h3>Lavender Latte</h3>
       </div>
 
       <div class="item">
-		<img src="chicago.jpg" alt="Chicago" style="width:100%;">
+	  <a href="Mega recess.html">
+		<img id= "featitem" src="images/reesesspieimage.jpg" alt="Reeses Pie">
+	  </a>
+	  <h3>Reeses Pie</h3>
       </div>
     
       <div class="item">
-        <img src="ny.jpg" alt="New york" style="width:100%;">
+	  <a href="sleepingbearlatte.html">
+        <img id="featitem" src="images/Sleeping Bear Latte Transparent.png" alt="Sleeping Bear Latte">
+	  </a>
+	  <h3>Sleeping Bear Latte</h3>
+      </div>
+	  
+	  <div class="item">
+	  <a href= "kunafeh.html">
+        <img id="featitem" src="images/kunafeh.png" alt="Kunafeh">
+	  </a>
+	  <h3>Kunafeh</h3>
       </div>
     </div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -65,8 +80,16 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <div class="container2">
+  <a href="catalogue.html">
+  <input id= "order" type="submit" value="Order Now"/>
+  </a>
+  </div>
   
 </div>
 
+<footer>
+  <p>&copy;Team One Cafe 2023</p>
+</footer>
 </body>
 </html>
