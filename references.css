@@ -1,0 +1,52 @@
+li.active {
+    background-color:#a9927d;
+    }
+    
+    header {
+    background-color:white;
+    background-image:url("images/coffeebean.jpg");
+    background-size:contain;
+    }
+    
+    #navbar {
+        background-color: #F1DABF;
+        padding: 2px;
+        padding-bottom: 0;
+    }
+    
+    #navi {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: Georgia, Cambria, "Times New Roman", serif;
+        font-size: 16px;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a{
+        display: block;
+        text-align: center;
+        padding: 12px 14px;
+    }
+    
+    li a:hover {
+        color: #F1DABF;
+    }
+    
+    a:link {
+        color: #362417;
+        font-size: 16px;
+    }
+    
+    a:visited {
+        color: #362417;
+    }
