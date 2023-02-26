@@ -103,3 +103,16 @@ a:visited {
 	display: flex;
 	width: 100%;
 }
+
+.card{
+	background-color: #A9927D;
+	display:flex;
+	padding: 30px;
+	margin: 0;
+}
+
+.card-img-top {
+	width: 350px;
+	height: auto;
+	margin: auto;
+}
