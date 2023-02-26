@@ -80,7 +80,17 @@ h2 {
 	width: 350px;
 	height: auto;
 	margin: auto;
+	text-align: center;
 }
+
+.item {
+	height:525px;
+	text-align:center;
+}
+
+.carousel-inner .item a img {
+	margin: auto;	
+	}
 
 h3 {
 	text-align: center;
