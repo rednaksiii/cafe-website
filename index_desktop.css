@@ -85,12 +85,9 @@ h2 {
 
 .item {
 	height:525px;
+	padding-top:50px;
 	text-align:center;
 }
-
-.carousel-inner .item a img {
-	margin: auto;	
-	}
 
 h3 {
 	text-align: center;
