@@ -38,8 +38,8 @@
   
   /* Style the back side */
   .flip-card-back {
-    background-color: dodgerblue;
-    color: white;
+    background-color: #fffbff;
+    color: #04030f;
     transform: rotateY(180deg);
   }
 
@@ -99,4 +99,7 @@ a:link {
 a:visited {
 	color: #362417;
 }
-  
+.col-lg-6 mb-4 {
+	display: flex;
+	width: 100%;
+}
