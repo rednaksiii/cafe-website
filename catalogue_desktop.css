@@ -77,10 +77,19 @@ a:visited {
 	flex: 1;
 	padding: 30px;
 	margin: 0;
+	padding: 10px;
+    margin: 10px;
+    height: 500px; /* adjust the height as per your requirement */
 }
 
 .card-img-top {
-	width: 350px;
-	height: auto;
+	width: auto;
+	height: 300px;
 	margin: auto;
+	display: block;
+}
+
+.card-title {
+	text-align: center;
+	font-family: Georgia, Cambria, "Times New Roman", serif;
 }
