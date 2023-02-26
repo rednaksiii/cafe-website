@@ -10,23 +10,30 @@ header
 	background-image: url("images/coffeebean.jpg");
 	background-size: contain;
 	color: white;
+    text-align: center;
 }
 
 .image-container {
+    max-width: 100%;
     position: relative;
-    left: 60%;
-    max-width: 100;
 }
 
 .image-text {
-    position: absolute;
-    top: 40%;
-    left: -30%;
+    position: relative;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    color: whitesmoke;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+.image-container img {
+    width: 50%;
+    height: auto;
+    float: right;
 }
 
-  
 .column {
     flex: 1;
 }
@@ -86,6 +93,14 @@ ul {
     border: 4mm ridge rgba(54, 36, 23, 1);
 }
 
+.panel-title {
+    text-align: center;
+}
+
+.col-md-2 {
+    text-align: center;
+}
+
 .list-group-item {
     background-color:#a9927d;
     opacity: 0.95;
@@ -98,18 +113,32 @@ ul {
     color: #362417
   }
   
-  li {
+li {
     float: left;
-  }
+}
   
-  a {
+a {
     display: block; 
     padding: 10px; 
     text-decoration: none;
     font-size: 16px;
     color:#362417;
-  }
+}
   
+select.custom-select {
+    color: black;
+    background-color: #F1DABF;
+}
+  
+.btn-success {
+    color: black;
+    background-color: #F1DABF;   
+}
+
+.order-buttons {
+    color: black;
+    background-color: #F1DABF;   
+}
 
 
 /*
@@ -138,5 +167,11 @@ ul {
 
     .container {
         width: 90%;
+    }
+
+    .image-container img {
+        width: 80%;
+        height: auto;
+        float: inherit;
     }
   }

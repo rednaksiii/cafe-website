@@ -3,15 +3,21 @@
 <head>
    <meta charset="utf-8">
    <title>Turkish tea</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
    <link rel="stylesheet" href="style-1.css">
 </head>
 <body>
+   <main>
+      <header>
+         <img src= "images/logo2.png" alt = "logo"/>
+         <h1>Team One Cafe</h1>
+      </header>
+   </main>    
    <div class="container">
       <nav class="navbar navbar-default" role="navigation">
-         <a class="navbar-brand" href="#">Team One Cafe</a>
-         <ul class="nav navbar-nav">
+         <ul id="navi" class="nav navbar nav">
             <li><a href="#">Home</a></li>
             <li><a href="#">Browse</a></li>
             <li><a href="#">Search</a></li>
@@ -26,9 +32,9 @@
                </div>
                <div class="panel-body">
                   <ul class="list-group">
-                     <li class="list-group-item"><a href="kunafeh.html" style="color: white;">Kunafeh</a></li>
-                     <li class="list-group-item"><a href="tea.html" style="color: white;">Tea</a></li>
                      <li class="list-group-item"><a href="baklava.html" style="color: white;">Baklava</a></li>
+                     <li class="list-group-item"><a href="tea.html" style="color: white;">Tea</a></li>
+                     <li class="list-group-item"><a href="kunafeh.html" style="color: white;">Kunafeh</a></li>
                   </ul>
                </div>
             </div>
@@ -49,17 +55,17 @@
                 robust flavor and deep red color.
                </p>
 
-               <form method="post" action="turkish-tea.html">
+               <form method="post" action="">
                   <fieldset>
                       <legend>Size</legend>
-                      <select name="size" style="color:black">
+                      <select name="size" class="custom-select">
                           <option style="color:black">Small</option>
                           <option style="color:black">Medium</option>
                           <option style="color:black">Large</option>
                           <option style="color:black">XLarge</option>
                       </select>
-                      <button style="color:black">Add to Order</button>
-                      <button style="color:black">Cancel</button>
+                      <button class="order-buttons">Add to Order</button>
+                      <button class="order-buttons">Cancel</button>
 
                   </fieldset>
                </form>
