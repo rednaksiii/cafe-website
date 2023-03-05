@@ -53,3 +53,25 @@ li.active {
     h2 {
 	    font-family: Georgia, Cambria, "Times New Roman", serif;
     }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 12pt;
+        color: #362417;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #F1DABF;
+      }
+      
+      tr:nth-child(odd) {
+          background-color: #A9927D;
+      }
