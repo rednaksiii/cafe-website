@@ -1,7 +1,7 @@
 .submitBtn {
     float:right;
     transition-property: background-color;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   transition-timing-function: ease-out;
     transition-delay: 0s;
 }
