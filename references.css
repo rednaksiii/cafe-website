@@ -50,3 +50,6 @@ li.active {
     a:visited {
         color: #362417;
     }
+    h2 {
+	    font-family: Georgia, Cambria, "Times New Roman", serif;
+    }
