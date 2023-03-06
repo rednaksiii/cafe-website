@@ -4,11 +4,11 @@
 }
 
 .image-text {
-    position: absolute;
-    top: 40%;
-    left: -30%;
-    transform: translate(-50%, -50%);
-    color: whitesmoke;
+    position: relative;
+    transform: translate(-60%, -10%);
+    z-index: 1;
+    color: white;
+    text-align: left;
 }
 .cafename {
     font-size:large
