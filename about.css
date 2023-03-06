@@ -76,6 +76,7 @@ body {
 
 .col-lg-3 {
     margin: 1px;
+	align-content: center;
 }
 
 .flip-card {
@@ -84,7 +85,7 @@ body {
   height: 200px;
   perspective: 1000px;
   margin: 4px;
-  align: center;
+  align-content: center;
   
 }
 
