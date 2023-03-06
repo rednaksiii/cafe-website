@@ -45,8 +45,3 @@ body {
 .container {
     width:80%;
 }
-.image-container img {
-    width: 50%;
-    height: auto;
-    float: right;
-}
