@@ -45,3 +45,35 @@ body {
 .container {
     width:80%;
 }
+.image-container img {
+    width: 40%;
+    height: auto;
+    float: inherit;
+}
+@media screen and (max-width: 500px) {
+    .container {
+      width: 90%;
+    }
+
+    .navbar {
+        font-size: larger;
+    }
+
+    .panel-body {
+        font-size: larger;
+    }
+
+    p {
+      font-size: 0.3rem;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .image-container img {
+        width: 40%;
+        height: auto;
+        float: inherit;
+    }
+  }
