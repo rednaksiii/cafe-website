@@ -23,14 +23,45 @@ header
 	
 }
 
-#mobilemenu {
-	
-	font-family: Georgia, Cambria, "Times New Roman", serif;
-	color: black;
-	display: inline-block;
-	width: 90%;
+.topnav {
+  overflow: hidden;
+  background-color: #04AA6D!important;
+  position: relative;
 }
 
+.topnav #myLinks {
+  display: none;
+  background-color: #A9927D!important;
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+  
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #362417!important;
+  color: black;
+}
+
+.active {
+  background-color: #362417;
+  color: white !important;
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+}
 
 ul {
 	list-style-type: none;
