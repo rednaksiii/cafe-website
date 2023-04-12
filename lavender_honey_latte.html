@@ -7,6 +7,10 @@
    <link rel="stylesheet" href="lavenderhoneylatte_mobile.css" media="screen and (max-width:480px)" />
    <link rel="stylesheet" href="lavenderhoneylatte_desktop.css" media="screen and (min-width:481px)" />
    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css"/>
+   <link rel="icon" type="image/x-icon" href="images/logo2.png"></link>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script type="text/javascript" src="lavender_honey.js"></script>
+   
 </head>
 <body>
 <main>
@@ -24,12 +28,19 @@
 					<li><a href="about.html">About</a></li>
 				</ul>
 		</nav>
-		<select id="mobilemenu">
-			<option><a href="index.html">Home</a></option>
-			<option><a href="catalogue.html">Menu</a></option>
-			<option><a href="about.html">About</a></option>
-			<option><a href="references.html">References</a></option>
-		<br/></select>
+		<div class="topnav">
+			<a href="index.html" class="active">Home</a>
+		<div id="myLinks">
+		<a href="catalogue.html" class="active">Menu</a>
+		<a href="index.html">Home</a>
+		<a href="references.html">References</a>
+		<a href="about.html">About</a>
+		</div>
+		<a href="javascript:void(0);" class="icon" onclick="mobileMenu()">
+		<i class="fa fa-bars"></i>
+	</a>
+	</div>
+		
 	<div class="row">
 	<div class="col-md-3">
 		<div class="panel panel-default">
@@ -49,11 +60,11 @@
 			<div class="jumbotron">
 				<h3 id="lavtitle">Lavender Honey Tea Latte</h3>
 				<div class="image-container">
-				<img class="lavenderhoney" src="images/lavenderlatte.png" width= "300px" alt = "lavender honey tea latte"/>
+				<img class="lavenderhoney" onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/lavenderlatte.png" width= "300px" alt = "lavender honey tea latte"/>
 				</div>
 				<p id="descrip">
 					Enjoy the floral flavor of fresh lavender with the subtle sweetness of our locally sourced honey, 
-					steamed in your choice of milk and topping.
+					steamed in your choice of milk and topping. Prices starting at $4.45
 					
 				</p>
 				<br/><p id="cals">
@@ -71,34 +82,45 @@
 								<label id="choicetitle">Milk Choice: </label><br/>
 								<select name="milkopt">
 									<option></option>
-									<option>2% Milk</option>
-									<option>Whole Milk</option>
-									<option>Almond Milk</option>
-									<option>Oat Milk</option>
-									<option>No Milk</option>
+									<option value="0.00">2% Milk</option>
+									<option value="0.25">Whole Milk</option>
+									<option value="0.30">Almond Milk</option>
+									<option value="0.30">Oat Milk</option>
+									<option value="0.00">No Milk</option>
 									</select>
 							</p>
 							<p class="choices">
 								<label id="choicetitle">Foam Choice: </label><br/>
 								<select name="foamopt">
 									<option></option>
-									<option>2% Milk Foam</option>
-									<option>Non-Dairy Foam</option>
-									<option>No Foam</option>
+									<option value="0.15">2% Milk Foam</option>
+									<option value="0.00">Non-Dairy Foam</option>
+									<option value="0.00">No Foam</option>
 								</select>
 							</p>
 							<p class="choices2">
 								<label id="choicetitle">Extras/Toppings: </label><br/>
 								<select name="topopt">
 									<option></option>
-									<option>Lavender Sprinkle</option>
-									<option>Sugar Cookie Dust</option>
-									<option>Honey Drizzle</option>
-									<option>No Extras/Toppings</option>
+									<option value="0.25">Lavender Sprinkle</option>
+									<option value="0.30">Sugar Cookie Dust</option>
+									<option value="0.10">Honey Drizzle</option>
+									<option value="0.00">No Extras/Toppings</option>
 								</select>
 							</p>
-							<br/><input id= "order" type="submit" value="Add to Order"/>
-							<input id="clear" type="reset" value="Clear" />
+							<p class="choices2">
+								<label id="choicetitle">Size: </label><br/>
+								<select name="size">
+									<option></option>
+									<option value="0.00">Small</option>
+									<option value="0.25">Medium</option>
+									<option value="0.50">Large</option>
+								</select>
+							</p>
+							<br/><input id= "order" type="submit" value="Add to Order" onclick="snackMessage();"/>
+							<input id="clear" type="reset" value="Clear" onclick="snackMessage2();" />
+							<div id="snackbar1">Added to order!</div>
+							<div id="snackbar2">Cleared Choices</div>
 						</fieldset>
 						</form>
 	</div>
