@@ -26,6 +26,7 @@ function getPrice(form) {
         } else {
             $(this).css('background-color', 'brown');
             $(this).text('Added!');
+            var chocolate = 2
         }
     });
 
@@ -38,6 +39,7 @@ function getPrice(form) {
         } else {
             $(this).css('background-color', 'brown');
             $(this).text('Added!');
+            var whipped = 1
         }
     });
 });
