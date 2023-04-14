@@ -26,7 +26,7 @@ function getPrice(form) {
         } else {
             $(this).css('background-color', 'brown');
             $(this).text('Added!');
-            var chocolate = 2
+            var chocolate = $(this).val();
         }
     });
 
@@ -39,7 +39,7 @@ function getPrice(form) {
         } else {
             $(this).css('background-color', 'brown');
             $(this).text('Added!');
-            var whipped = 1
+            var whipped = $(this).val();
         }
     });
 });
