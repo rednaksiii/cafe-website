@@ -19,7 +19,7 @@
         }
     });
 
-    $('#wallnut').click(function(){
+    $('#walnut').click(function(){
         if($(this).text() == 'Added!') {
             $(this).css('background-color', '');
             $(this).text('Add');
