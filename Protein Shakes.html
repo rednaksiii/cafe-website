@@ -3,12 +3,14 @@
 <head>
    <meta charset="utf-8">
    <title>Protein Shake</title>
-   <link rel="stylesheet" href="megarecess.css" media="screen and (min-width:481px)"/>
+   <link rel="stylesheet" href="megarecess.css"/>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
-   <!--<link rel="stylesheet" href="style-1.css">-->
-
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script type="text/javascript" src="javascript/protein.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="icon" type="image/x-icon" href="images/logo2.png"></link>
 </head>
 <h6>
     <img src="images/logo2.png" alt="Logo">
@@ -22,6 +24,7 @@
             <li><a href="catalogue.html">Menu</a></li>
             <li><a href="references.html">References</a></li>
             <li><a href="about.html">About</a></li>
+            <li class="nav-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li></li>
          </ul>
       </nav>
       <div class="row">
@@ -55,24 +58,21 @@
                 for after that hard day in the gym. This will get that soreness gone with a great tasting
                 drink!
                </p>
-               <form method="post" action="order.php">
+               <form onsubmit="return false;">
                     <fieldset>
                         <legend>Flavors!</legend>
                         <select name="size" style="color:black">
-                            <option style="color:grey" value="null">Select</option>
-                            <option style="color:black">Chocolate</option>
-                            <option style="color:black">Strawberry</option>
-                            <option style="color:black">Vanilla</option>
-                            <option style="color:black">Carmel</option>
+                            <option style="color:grey" value="0">Select</option>
+                            <option style="color:black" value="5">Chocolate</option>
+                            <option style="color:black" value="6">Strawberry</option>
+                            <option style="color:black" value="3">Vanilla</option>
+                            <option style="color:black" value="4">Carmel</option>
                         </select>
-                        <button style="color:black">Add to Order</button>
-                        <button style="color:black">Cancel</button>
-
+                        <button style="color:black" id="add_to_order" type="submit" class="submit-button">Add to Order</button>
+                        <button style="color:black" type="reset" class="cancel-button">Cancel</button>
                     </fieldset>
                </form>
-               
             </div>
-            
         </div>
         </div>
       </div>
