@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="megarecess.css">
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script type="text/javascript" src="javascript/ReesesPie.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
 </head>
 <h6>
@@ -18,10 +19,11 @@
    <div class="container">
       <nav class="navbar navbar-default" role="navigation">
          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Browse</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogue.html">Menu</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="nav-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li></li>
          </ul>
       </nav>
       <div class="row">
@@ -32,10 +34,10 @@
                </div>
                <div class="panel-body">
                   <ul class="list-group" style="background-color:#362417">
-                     <li class="list-group-item" style="background-color:#a9927d">Reese's Pie</li>
-                     <li class="list-group-item" style="background-color:#92817a">Dipped Apple</li>
-                     <li class="list-group-item" style="background-color:#a9927d">Protein Shakes</li>
-                     <li class="list-group-item" style="background-color:#92817a">Fruit Smoothies</li>
+                     <li class="list-group-item" style="background-color:#a9927d"><a href="Mega recess.html" style="color:black">Reese's Pie</a></li>
+                     <li class="list-group-item" style="background-color:#92817a"><a href="DippedApples.html" style="color:black">Dipped Apple</a></li>
+                     <li class="list-group-item" style="background-color:#a9927d"><a href="Protein Shakes.html" style="color:black">Protein Shakes</a></li>
+                     <li class="list-group-item" style="background-color:#92817a"><a href="Fruit Smoothies.html" style="color:black">Fruit Smoothies</a></li>
                      
                   </ul>
                </div>
@@ -56,18 +58,18 @@
                 to try. The perfect mix of chocolate and peanut butter
                 turned up to 11. A must have if you wish to dine your last!
                </p>
-               <form onsubmit="getPrice(document.getElementById('selection')); return false;" id="selection">
+               <form onsubmit="getPrice(); return false;" id="size-select">
                     <fieldset>
                         <legend>Make the Plunge</legend>
                         <select name="size" style="color:black">
-                            <option style="color:grey" value="null">Select</option>
-                            <option style="color:black">1 lb</option>
-                            <option style="color:black">2 lb</option>
-                            <option style="color:black">4 lb</option>
-                            <option style="color:red">Family Killer</option>
+                            <option style="color:grey" value="0">Select</option>
+                            <option style="color:black" value="20">1 lb</option>
+                            <option style="color:black" value="30">2 lb</option>
+                            <option style="color:black" value="40">4 lb</option>
+                            <option style="color:red" value="60">Family Killer</option>
                         </select>
                         <button style="color:black" id="add_to_order" type="submit">Add to Order</button>
-                        <button style="color:black" type="reset">Cancel</button>
+                        <button style="color:black" type="reset" class="cancel-button">Cancel</button>
 
                     </fieldset>
                </form>
@@ -76,48 +78,20 @@
                 <div class="col-md-2">
                     <img src="images/whiiped.png" height="50" width="50" alt="Whipped Cream">
                      <h5>Whipped Cream</h5>
-                     <button id="WhippedCream" type="button" class="btn btn-success" value="2">
+                     <button id="WhippedCream" type="button" class="btn btn-success add-button" value="2">
                         Add
                      </button>
                 </div>
                 <div class="col-md-2">
                      <img src="images/chocoo.png" height="50" width="50" alt="Chocolate sauce">
                      <h5>Chocolate Sauce</h5>
-                     <button id="ChocolateSauce" type="button" class="btn btn-success" value="1">
+                     <button id="ChocolateSauce" type="button" class="btn btn-success add-button" value="1">
                         Add
                      </button>
                 </div>
             </div>
             
         </div>
-        <article class = "col-md-12" style="background-color:#a9927d">
-         <h2 id="ReviewsViewandSubmit">Reviews</h2>
-         <form>
-           <fieldset>
-             <legend>Leave a review</legend>
-             <div class="form-group">
-               <label for="name">Name:</label>
-               <input type="text" id="name" name="name" class="form-control" required>
-             </div>
-             <div class="form-group">
-               <label for="rating">Rating:</label>
-               <select id="rating" name="rating" class="form-control" required>
-                 <option value="">--Select--</option>
-                 <option value="5">5 stars</option>
-                 <option value="4">4 stars</option>
-                 <option value="3">3 stars</option>
-                 <option value="2">2 stars</option>
-                 <option value="1">1 star</option>
-               </select>
-             </div>
-             <div class="form-group">
-               <label for="comment">Comment:</label>
-               <textarea id="comment" name="comment" class="form-control" required></textarea>
-             </div>
-             <button type="submit" class="btn btn-primary">Submit</button>
-           </fieldset>
-         </form>
-       </article>
       </div>
       </div>
    </div>
