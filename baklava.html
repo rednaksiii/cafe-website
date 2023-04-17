@@ -10,6 +10,29 @@
    <link rel="icon" type="image/x-icon" href="images/logo2.png"></link>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script type="text/javascript" src="javascript/baklava.js"></script>
+   <script type="text/javascript">
+      const sizeSelect = document.getElementById('size');
+      const priceValue = document.getElementById('total-price-value');
+
+      sizeSelect.addEventListener('change', () => {
+      const newSize = sizeSelect.value;
+      let newPrice = 0;
+      switch (newSize) {
+      case 'small':
+         newPrice = 10;
+         break;
+      case 'medium':
+         newPrice = 15;
+         break;
+      case 'large':
+         newPrice = 20;
+         break;
+  }
+  priceValue.textContent = '$' + newPrice;
+});
+
+  </script>
+  
 </head>
 <body>
    <main>
@@ -60,18 +83,18 @@
                <form method="post" action="">
                   <fieldset>
                       <legend>Size</legend>
-                      <select name="size" class="custom-select">
-                          <option style="color:black">Small</option>
-                          <option style="color:black">Medium</option>
-                          <option style="color:black">Large</option>
-                          <option style="color:black">XLarge</option>
-                      </select>
-                      <button class="order-buttons">Add to Order</button>
-                      <button class="order-buttons">Cancel</button>
+                      <form>
+                        <select id="size" name="size" class="custom-select" onchange="calculatePrice()">
+                           <option value="small">Small ($4)</option>
+                           <option value="medium">Medium ($6)</option>
+                           <option value="large">Large ($7)</option>
+                           <option value="xlarge">X-Large ($10)</option>
+                        </select><br><br>
+                     </form>
 
                   </fieldset>
                </form>
-
+               <div class="customizations">
                <h2>Customizations</h2>
                <div class="row">
                 <div class="col-md-2">
@@ -90,6 +113,7 @@
                               aria-hidden="true"></span> Add
                      </button>
                 </div>
+                
                <div class="col-md-2">
                 <img src="images/wallnut.png" height="50" width="50" alt="Walnut">
                  <h5>Walnut</h5>
@@ -106,6 +130,15 @@
                             aria-hidden="true"></span> Add
                    </button>
                  </div>
+               </div>
+
+               <div class="total-price">
+                  <h2>Total price:</h2>
+                  <label for="total-price">Total price:</label>
+                  <span id="total-price-value">$10</span>                  
+                  <button class="order-buttons">Add to Order</button>
+                  <button class="order-buttons">Cancel</button>
+              </div>
 
             </div>
          </div>
