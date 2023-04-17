@@ -1,49 +1,45 @@
-//Grab price of dropdown
-function getPrice(form) {
-    var price = 0;
-    var size = form.elements["size"].value;
-    if (size === "1 lb") {
-      price += 25;
-    } else if (size === "2 lb") {
-      price += 35;
-    } else if (size === "4 lb") {
-      price += 45;
-    } else if (size === "Family Killer") {
-      price += 70;
-    }
-    return price;
+
+//get prices if addons clicked
+  var chocolate = 0;
+  var whipped = 0;
+  var total = 0;
+  function getPrice() {
+    var sizeSelect = document.querySelector('select[name="size"]');
+    var selectedValue = sizeSelect.value;
+    var selectedInt = parseInt(selectedValue);
+    total = selectedInt + whipped + chocolate;
+    alert(total);
   }
-  //get prices if addons clicked
-  var chocolate = 0
-  var whipped = 0
   $(document).ready(function(){
     $('#ChocolateSauce').click(function(){
-        var chocolate = $(this).val();
+        chocolate = parseInt($(this).val());
         if($(this).text() == 'Added!') {
             $(this).css('background-color', '');
             $(this).text('Add');
-            var chocolate = 0
+            chocolate = 0;
         } else {
             $(this).css('background-color', 'brown');
             $(this).text('Added!');
-            var chocolate = $(this).val();
+            chocolate = parseInt($(this).val());
         }
     });
-
     $('#WhippedCream').click(function(){
-        var whipped = $(this).val();
+        whipped = parseInt($(this).val());
         if($(this).text() == 'Added!') {
             $(this).css('background-color', '');
             $(this).text('Add');
-            var whipped = 0
+            whipped = 0;
         } else {
             $(this).css('background-color', 'brown');
             $(this).text('Added!');
-            var whipped = $(this).val();
+            whipped = parseInt($(this).val());
         }
+    });
+    $('.cancel-button').click(function(){
+      // Reset all buttons
+      $('.add-button').css('background-color', '');
+      $('.add-button').text('Add');
+      chocolate = 0;
+      whipped = 0;
     });
 });
-
-//Still working on getting function to return a simple int value
-var selectedop = document.getElementById("selection");
-var total = getPrice(selectedop) + chocolate + whipped;
