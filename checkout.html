@@ -1,3 +1,28 @@
+<!--<?php
+session_start();
+if(isset($_SESSION["shopping_cart"]))  
+{  
+$item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
+if(!in_array($_GET["id"], $item_array_id))  
+{  
+     $count = count($_SESSION["shopping_cart"]);  
+     $item_array = array(  
+          'item_id'               =>     $_GET["id"],  
+          'item_name'               =>     $_POST["hidden_name"],  
+          'item_price'          =>     $_POST["hidden_price"],  
+          'item_quantity'          =>     $_POST["quantity"]  
+          'item_total'
+     );  
+     $_SESSION["shopping_cart"][$count] = $item_array;  
+   }
+}  
+else  
+{  
+     echo '<script>alert("Item Already Added")</script>';  
+     echo '<script>window.location="index.php"</script>';  
+}  
+?>
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +69,7 @@
          </div>
          <div class="col-md-9">
             <div class="jumbotron">
-
+           
               <h1>Cart</h1>
               <table class="table table-bordered">
                 <thead>
@@ -53,19 +78,38 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Subtotal</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody id="cart-items">
-                  <!-- Cart items will be dynamically added here -->
+                 <!-- <td><?php echo $values["item_name"]; ?></td>  
+                               <td><?php echo $values["item_quantity"]; ?></td>  
+                               <td>$ <?php echo $values["item_price"]; ?></td>  
+                               <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
+                <td><a href="checkout.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
+                  -->  
+                <!-- Cart items will be dynamically added here -->
+             
+
+
+   
                 </tbody>
                 <tfoot>
                   <tr>
                     <td colspan="3" class="text-right">Total:</td>
                     <td id="cart-total"></td>
                   </tr>
+               
+                  </tr>
                 </tfoot>
               </table>
-
+         
+               <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----MIIHLwYJKoZIhvcNAQcEoIIHIDCCBxwCAQExggEwMIIBLAIBADCBlDCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb20CAQAwDQYJKoZIhvcNAQEBBQAEgYBs9pN+llvL/yu9IzlKdpS8Xih+DZjqf/GTd7iequZ5iE1rak0OjcJ0wjIf+mU6ogsXb37FeZstTYLyW8HWRCF0xNoifeZtVSN0efLY5FznJe9wOXvL3ZpjaKZ1KcT8lRsw9Mqkkds9oY9f0yDARKSjTJSoWyXkP3rwpY51rhFv9TELMAkGBSsOAwIaBQAwgawGCSqGSIb3DQEHATAUBggqhkiG9w0DBwQIMOfjE8ZCfQOAgYhexIafylE9N0MyC6NHcHbjVgwn4KwnFw3DU9TQ0pB6HJFPgSw0d6dsNiIfKkXuNsKRH67pmzSROByJIj734jaj+3k6lF4MBc0RQZ9ncTvR8NGVWg3DPSDc+EaMHXZG0nhyxu8yq+FfQa46nLQ4U/0jWqBKO4GbjQiTjvX6WoB7OMdazOgbS6yUoIIDhzCCA4MwggLsoAMCAQICAQAwDQYJKoZIhvcNAQEFBQAwgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMB4XDTA0MDIxMzEwMTMxNVoXDTM1MDIxMzEwMTMxNVowgY4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEWMBQGA1UEBxMNTW91bnRhaW4gVmlldzEUMBIGA1UEChMLUGF5UGFsIEluYy4xEzARBgNVBAsUCmxpdmVfY2VydHMxETAPBgNVBAMUCGxpdmVfYXBpMRwwGgYJKoZIhvcNAQkBFg1yZUBwYXlwYWwuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBR07d/ETMS1ycjtkpkvjXZe9k+6CieLuLsPumsJ7QC1odNz3sJiCbs2wC0nLE0uLGaEtXynIgRqIddYCHx88pb5HTXv4SZeuv0Rqq4+axW9PLAAATU8w04qqjaSXgbGLP3NmohqM6bV9kZZwZLR/klDaQGo1u9uDb9lr4Yn+rBQIDAQABo4HuMIHrMB0GA1UdDgQWBBSWn3y7xm8XvVk/UtcKG+wQ1mSUazCBuwYDVR0jBIGzMIGwgBSWn3y7xm8XvVk/UtcKG+wQ1mSUa6GBlKSBkTCBjjELMAkGA1UEBhMCVVMxCzAJBgNVBAgTAkNBMRYwFAYDVQQHEw1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKEwtQYXlQYWwgSW5jLjETMBEGA1UECxQKbGl2ZV9jZXJ0czERMA8GA1UEAxQIbGl2ZV9hcGkxHDAaBgkqhkiG9w0BCQEWDXJlQHBheXBhbC5jb22CAQAwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOBgQCBXzpWmoBa5e9fo6ujionW1hUhPkOBakTr3YCDjbYfvJEiv/2P+IobhOGJr85+XHhN0v4gUkEDI8r2/rNk1m0GA8HKddvTjyGw/XqXa+LSTlDYkqI8OwR8GEYj4efEtcRpRYBxV8KxAW93YDWzFGvruKnnLbDAF6VR5w/cCMn5hzGCAZowggGWAgEBMIGUMIGOMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFjAUBgNVBAcTDU1vdW50YWluIFZpZXcxFDASBgNVBAoTC1BheVBhbCBJbmMuMRMwEQYDVQQLFApsaXZlX2NlcnRzMREwDwYDVQQDFAhsaXZlX2FwaTEcMBoGCSqGSIb3DQEJARYNcmVAcGF5cGFsLmNvbQIBADAJBgUrDgMCGgUAoF0wGAYJKoZIhvcNAQkDMQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjMwNDE3MTczMjAxWjAjBgkqhkiG9w0BCQQxFgQULf3ya2fJErrPOfxX7HCgA7Aguq8wDQYJKoZIhvcNAQEBBQAEgYCT5P4RiWGc2bP7LBagl9e0aG6eVfDpF9FQNMPe//H1d1DKZOFPzEkdHVJygsat9+0Xpf0RnGNn9dAYmDom/vvONZIW+rh9Nr4ovgL/fkg6TzR/ZchIlPv+sfmxXabRCIOc9oXbKJiMOX2eeOdMBJih5yMprk72rQultfgVXDF0nA==-----END PKCS7-----">
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"  name="submit" alt="PayPal - The safer, easier way to pay online!">
+                  <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                  </form>
             </div>
          </div>
       </div>
