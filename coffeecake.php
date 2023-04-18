@@ -8,9 +8,18 @@
     <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="style-1.css" type="text/css">
     <link rel="stylesheet" href="coffeecake.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="coffeecake.js"></script>
     <title>The Greatest Coffee Cake</title>
 </head>
 <body>
+  <script>
+    <?php include "insertIntoDB.php"?>
+    var value = "<?php echo $id; ?>";
+    if($id > 0) {
+      window.location.href = "checkout.html";
+    }
+    </script>
   <div class="container-fluid">
     <div class="row">
       <header>
@@ -26,6 +35,7 @@
               <li><a href="catalogue.html">Menu</a></li>
               <li><a href="references.html">References</a></li>
               <li><a href="about.html">About</a></li>
+              <li class="nav-item"><a href="checkout.html"><i class="fa fa-shopping-cart"></i></a></li>
           </ul>
   </nav>
  <div class="row">
@@ -88,6 +98,7 @@
      <div class="row">
       <div class="col-md-6 col-md-offset-3">
           <select class="form-control" id="select">
+            <option></option>
             <option>Streusel</option>
             <option>Raspberries</option>
             <option>Cinnamon Sugar</option>
@@ -105,6 +116,7 @@
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
           <select class="form-control" id="select">
+            <option></option>
             <option>Warm</option>
             <option>Frozen</option>
           </select>
