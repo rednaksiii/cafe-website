@@ -9,17 +9,12 @@
     <link rel="stylesheet" href="style-1.css" type="text/css">
     <link rel="stylesheet" href="coffeecake.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="coffeecake.js"></script>
+  
     <title>The Greatest Coffee Cake</title>
 </head>
 <body>
-  <script>
-    <?php include "insertIntoDB.php"?>
-    var value = "<?php echo $id; ?>";
-    if($id > 0) {
-      window.location.href = "checkout.html";
-    }
-    </script>
+<script src="coffeecake.js"></script>
+ 
   <div class="container-fluid">
     <div class="row">
       <header>
@@ -46,10 +41,10 @@
      </div>
      <div class="panel-body">
         <ul class="list-group">
-           <li class="list-group-item"><a class="recommendations" href="coffeecake.html">Coffee cake</a></li>
-           <li class="list-group-item"><a class="recommendations" href="hotchocolate.html">Hot chocolate</a></li>
-           <li class="list-group-item"><a class="recommendations" href="pecanpie.html">Pecan Pie</a></li>
-           <li class="list-group-item"><a class="recommendations" href="sleepingbearlatte.html">Sleeping Bear Latte</a></li>
+           <li class="list-group-item"><a class="recommendations" href="coffeecake.php">Coffee cake</a></li>
+           <li class="list-group-item"><a class="recommendations" href="hotchocolate.php">Hot chocolate</a></li>
+           <li class="list-group-item"><a class="recommendations" href="pecanpie.php">Pecan Pie</a></li>
+           <li class="list-group-item"><a class="recommendations" href="sleepingbearlatte.php">Sleeping Bear Latte</a></li>
         </ul>
      </div>
   </div>
@@ -81,7 +76,7 @@
 </div>
 </div>
 <div class="row">
-  <form>
+  <form name="coffeecakeform" method="post" action="insertindatabase.php">
     <fieldset>
       <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3 lbl">
@@ -97,13 +92,13 @@
     </div>
      <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+          <select class="form-control" id="addOn" onchange="addOnTotal(this.value)">
             <option></option>
-            <option>Streusel</option>
-            <option>Raspberries</option>
-            <option>Cinnamon Sugar</option>
-            <option>Maple Syrup</option>
-            <option>Whipped Cream</option>
+            <option value="0.20">Streusel</option>
+            <option value="0.20">Raspberries</option>
+            <option value="0.20">Cinnamon Sugar</option>
+            <option value="0.20">Maple Syrup</option>
+            <option value="0.20">Whipped Cream</option>
           </select>
           <br>
         </div>
@@ -115,12 +110,14 @@
     </div>
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+          <select class="form-control" id="warmFrozen" onchange="totalAmt(this.value)">
             <option></option>
-            <option>Warm</option>
-            <option>Frozen</option>
+            <option value="4.75">Warm</option>
+            <option value= "4.50" >Frozen</option>
           </select>
           <br>
+          <div id="totalPrice"> 
+          </div>
         </div>
         </div>
       </div>

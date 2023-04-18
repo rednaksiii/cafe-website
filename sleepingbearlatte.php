@@ -38,10 +38,10 @@
      </div>
      <div class="panel-body">
         <ul class="list-group">
-           <li class="list-group-item"><a class="recommendations" href="coffeecake.html">Coffee cake</a></li>
-           <li class="list-group-item"><a class="recommendations" href="hotchocolate.html">Hot chocolate</a></li>
-           <li class="list-group-item"><a class="recommendations" href="pecanpie.html">Pecan Pie</a></li>
-           <li class="list-group-item"><a class="recommendations" href="sleepingbearlatte.html">Sleeping Bear Latte</a></li>
+        <li class="list-group-item"><a class="recommendations" href="coffeecake.php">Coffee cake</a></li>
+           <li class="list-group-item"><a class="recommendations" href="hotchocolate.php">Hot chocolate</a></li>
+           <li class="list-group-item"><a class="recommendations" href="pecanpie.php">Pecan Pie</a></li>
+           <li class="list-group-item"><a class="recommendations" href="sleepingbearlatte.php">Sleeping Bear Latte</a></li>
         </ul>
      </div>
   </div>
