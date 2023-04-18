@@ -12,8 +12,8 @@ header
 	background-image: url("images/coffeebean.jpg");
 	background-size: contain;
 	color: white;
+    text-align: center;
 }
-
 #navbar {
 	background-color: #F1DABF;
 	padding: 0;
