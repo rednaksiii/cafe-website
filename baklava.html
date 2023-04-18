@@ -10,28 +10,29 @@
    <link rel="icon" type="image/x-icon" href="images/logo2.png"></link>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script type="text/javascript" src="javascript/baklava.js"></script>
-   <script type="text/javascript">
-      const sizeSelect = document.getElementById('size');
-      const priceValue = document.getElementById('total-price-value');
-
-      sizeSelect.addEventListener('change', () => {
-      const newSize = sizeSelect.value;
-      let newPrice = 0;
-      switch (newSize) {
-      case 'small':
-         newPrice = 10;
-         break;
-      case 'medium':
-         newPrice = 15;
-         break;
-      case 'large':
-         newPrice = 20;
-         break;
-  }
-  priceValue.textContent = '$' + newPrice;
-});
-
-  </script>
+   <script type="text/javascript">      
+      function calculatePrice() {
+        var size = document.getElementById("size").value;
+        var customizations = document.getElementById("customizations").value;
+        var price = 0;
+        if (size == "small") {
+          price = 4;
+        } else if (size == "medium") {
+          price = 6;
+        } else if (size == "large") {
+          price = 7;
+        } else if (size == "xlarge") {
+          price = 10;
+        }
+        price += customizations;
+        return price;
+      }
+    
+      document.querySelector('.order-buttons').addEventListener('click', function() {
+        const totalPrice = calculatePrice();
+        document.getElementById("total-price-value").innerHTML = "$" + totalPrice;
+      });
+    </script>
   
 </head>
 <body>
@@ -138,7 +139,7 @@
                   <span id="total-price-value">$10</span>                  
                   <button class="order-buttons">Add to Order</button>
                   <button class="order-buttons">Cancel</button>
-              </div>
+                </div>
 
             </div>
          </div>
