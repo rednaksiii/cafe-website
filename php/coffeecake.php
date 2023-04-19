@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="style-1.css" type="text/css">
+    <link rel="stylesheet" href="/css/style-1.css" type="text/css">
     <link rel="stylesheet" href="coffeecake.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
     <title>The Greatest Coffee Cake</title>
 </head>
 <body>
-<script src="coffeecake.js"></script>
+<script src="/javascript/coffeecake.js"></script>
  
   <div class="container-fluid">
     <div class="row">
       <header>
-      <img src="images/logo2.png" alt="logo">
+      <img src="/images/logo2.png" alt="logo">
       <h2>Team One Cafe</h2>
    
     </header>
@@ -60,7 +60,7 @@
     </div>
 </div>
 <div class="image-container text-center">
-    <img src="images/CoffeeCakeTransparent.png" alt="Coffee Cake" class="animated-image">
+    <img src="/images/CoffeeCakeTransparent.png" alt="Coffee Cake" class="animated-image">
 </div>
 </div>
 </div>
