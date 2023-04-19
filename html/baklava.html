@@ -8,30 +8,8 @@
    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
    <link rel="stylesheet" href="/css/style-1.css">
    <link rel="icon" type="image/x-icon" href="/images/logo2.png"></link>
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script type="text/javascript" src="/javascript/baklava.js"></script>
-   <script>
-      // Get references to the size selection and price display elements
-      const sizeSelection = document.getElementById('size-selection');
-      const priceDisplay = document.querySelector('.total-price');
-    
-      // Define the prices for each size option
-      const sizePrices = {
-        small: 10,
-        medium: 15,
-        large: 20,
-      };
-    
-      // Add an event listener to the size selection to update the price
-      sizeSelection.addEventListener('change', () => {
-        const selectedSize = sizeSelection.value;
-        const selectedPrice = sizePrices[selectedSize];
-    
-        // Update the price display with the selected price
-        priceDisplay.textContent = '$' + selectedPrice.toFixed(2);
-      });
-    </script>
-  
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+   <script src="/javascript/baklava.js"></script>
 </head>
 <body>
    <main>
@@ -96,7 +74,7 @@
                <div class="row">
                 <div class="col-md-2">
                     <img src="/images/pistachio.png" height="50" width="50" alt="Pistachio">
-                     <h5>Pistachio</h5>
+                     <h5>Pistachio ($1)</h5>
                      <button id="pistachio" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
@@ -104,7 +82,7 @@
                 </div>
                 <div class="col-md-2">
                      <img src="/images/almonds.png" height="50" width="50" alt="Almonds">
-                     <h5>Almonds</h5>
+                     <h5>Almonds ($1)</h5>
                      <button id="almonds" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
@@ -113,7 +91,7 @@
                 
                <div class="col-md-2">
                 <img src="/images/wallnut.png" height="50" width="50" alt="Walnut">
-                 <h5>Walnut</h5>
+                 <h5>Walnut ($1)</h5>
                  <button id="walnut" type="button" class="btn btn-success">
                     <span class="glyphicon glyphicon-shopping-cart"
                           aria-hidden="true"></span> Add
@@ -121,21 +99,61 @@
                </div>
                <div class="col-md-2">
                   <img src="/images/ice-cream.png" height="50" width="50" alt="Ice Cream">
-                   <h5>Ice Cream</h5>
+                   <h5>Cream ($1)</h5>
                    <button id="icecream" type="button" class="btn btn-success">
                       <span class="glyphicon glyphicon-shopping-cart"
                             aria-hidden="true"></span> Add
                    </button>
                  </div>
                </div>
-
-               <div class="total-price">
-                  $10.00
+               <br>
+               <div>
+                  <legend>Total</legend>
+                  <div class="total-price">$4.00</div>
+                  <br>
+                  <button class="order-buttons">Add to Order</button>
+                  <button class="order-buttons">Cancel</button>
                </div>
 
             </div>
          </div>
       </div>
    </div>
+   <script>
+      // Get references to the size selection and price display elements
+      const sizeSelection = document.getElementById('size-selection');
+      const priceDisplay = document.querySelector('.total-price');
+    
+      // Define the prices for each size option
+      const sizePrices = {
+        small: 4,
+        medium: 6,
+        large: 7,
+        xlarge: 10
+      };
+    
+      // Add an event listener to the size selection to update the price
+      sizeSelection.addEventListener('change', () => {
+        const selectedSize = sizeSelection.value;
+        const selectedPrice = sizePrices[selectedSize];
+    
+        // Update the price display with the selected price
+        priceDisplay.textContent = '$' + selectedPrice.toFixed(2);
+      });
+
+      function updatePrice() {
+      // Get the number of customizations
+      var numCustomizations = parseInt(document.getElementById('customizations').value);
+  
+      // Calculate the total price
+      var totalPrice = numCustomizations * 1;
+  
+      // Update the price display
+      document.getElementById('total-price').innerHTML = '$' + totalPrice.toFixed(2);
+}
+
+    </script>
+
+
 </body>
 </html>

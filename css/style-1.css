@@ -175,3 +175,8 @@ select.custom-select {
         float: inherit;
     }
   }
+
+.total-price {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}  
