@@ -4,14 +4,17 @@
    <meta charset="utf-8" name= "viewport" content="width=device-width">
    <title>Coconut Macaroons</title>
    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"/>
-   <link rel="stylesheet" href="/css/chococross_mobile.css" media="screen and (max-width:480px)" />
-   <link rel="stylesheet" href="/css/chococross_desktop.css" media="screen and (min-width:481px)" />
+   <link rel="stylesheet" href="chococross_mobile.css" media="screen and (max-width:480px)" />
+   <link rel="stylesheet" href="chococross_desktop.css" media="screen and (min-width:481px)" />
    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css"/>
+   <link rel="icon" type="image/x-icon" href="images/logo2.png"></link>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script type="text/javascript" src="cocomac.js"></script>
 </head>
 <body>
 <main>
 	<header>
-		<img src= "/images/logo2.png" alt = "logo"/>
+		<img src= "images/logo2.png" alt = "logo"/>
 		<h1>Team One Cafe</h1>
 	</header>
 </main>
@@ -22,14 +25,21 @@
 					<li><a href="catalogue.html">Menu</a></li>
 					<li><a href="references.html">References</a></li>
 					<li><a href="about.html">About</a></li>
+					<li class="nav-item"><a href="#"><i class="fa fa-shopping-cart"></i></a></li></li>
 				</ul>
 		</nav>
-		<select id="mobilemenu">
-			<option><a href="index.html">Home</a></option>
-			<option><a href="catalogue.html">Menu</a></option>
-			<option><a href="about.html">About</a></option>
-			<option><a href="references.html">References</a></option>
-		<br/></select>
+		<div class="topnav">
+				<a href="index.html" class="active">Home</a>
+		<div id="myLinks">
+		<a href="index.html" class="active">Home</a>
+		<a href="catalogue.html">Menu</a>
+		<a href="references.html">References</a>
+		<a href="about.html">About</a>
+		</div>
+		<a href="javascript:void(0);" class="icon" onclick="mobileMenu()">
+		<i class="fa fa-bars"></i>
+	</a>
+	</div>
 	<div class="row">
 	<div class="col-md-3">
 		<div class="panel panel-default">
@@ -49,11 +59,11 @@
 			<div class="jumbotron">
 				<h3 id="lavtitle">Coconut Macaroons</h3>
 				<div class="image-container">
-				<img class="lavenderhoney" src="/images/cocomac.png" width= "300px" alt = "chocolate croissant"/>
+				<img class="lavenderhoney" onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="images/cocomac.png" width= "300px" alt = "chocolate croissant"/>
 				</div>
 				<p id="descrip">
 					Enjoy the subtle sweetness of roasted coconut dipped in dark chocolate and sprinkled lightly with sea salt.
-					Best enjoyed with one of our beverages. 
+					Best enjoyed with one of our beverages. Prices starting at $5.50
 				</p>
 				<br/><p id="cals">
 					450 calories
@@ -68,16 +78,18 @@
 							<legend id="customizetitle">Customize Your Drink</legend>
 							<p class="choices2">
 								<label id="choicetitle">Extras/Toppings: </label><br/>
-								<select name="topopt">
+								<select id="topopt" onChange="topChoice(this.value)">
 									<option></option>
-									<option>Extra Chocolate Drizzle</option>
-									<option>Caramel Drizzle</option>
-									<option>No Sea Salt</option>
-									<option>No Extras/Toppings</option>
+									<option value="0.50">Extra Chocolate Drizzle + $0.50</option>
+									<option value="0.75">Caramel Drizzle + $0.75</option>
+									<option value="0.00">No Sea Salt</option>
+									<option value="0.00">No Extras/Toppings</option>
 								</select>
 							</p>
-							<br/><input id= "order" type="submit" value="Add to Order"/>
-							<input id="clear" type="reset" value="Clear" />
+							<br/><input id= "order" type="submit" value="Add to Order" onclick="snackMessage();"/>
+							<input id="clear" type="reset" value="Clear" onclick="snackMessage2();" />
+						<div id="snackbar1">Added to order!</div>
+						<div id="snackbar2">Cleared Choices</div>
 						</fieldset>
 						</form>
 	</div>
@@ -85,3 +97,4 @@
 </div>
 </body>
 </html>
+
