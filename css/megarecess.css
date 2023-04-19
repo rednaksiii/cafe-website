@@ -19,7 +19,7 @@
 h6 {
     margin:0;
     background-color:white;
-    background-image:url("images/coffeebean.jpg");
+    background-image:url("/images/coffeebean.jpg");
     background-size:contain;
     font-size:2em;
 }

@@ -9,7 +9,7 @@ header
 	vertical-align: baseline;
 	border: 0;
 	background-color: white;
-	background-image: url("images/coffeebean.jpg");
+	background-image: url("/images/coffeebean.jpg");
 	background-size: contain;
 	color: white;
 }
