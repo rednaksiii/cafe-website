@@ -7,6 +7,9 @@
    <link rel="stylesheet" href="/css/chococross_mobile.css" media="screen and (max-width:480px)" />
    <link rel="stylesheet" href="/css/chococross_desktop.css" media="screen and (min-width:481px)" />
    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css"/>
+   <link rel="icon" type="image/x-icon" href="images/logo2.png"></link>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script type="text/javascript" src="javascript/chococross.js"></script>
 </head>
 <body>
 <main>
@@ -24,12 +27,18 @@
 					<li><a href="about.html">About</a></li>
 				</ul>
 		</nav>
-		<select id="mobilemenu">
-			<option><a href="index.html">Home</a></option>
-			<option><a href="catalogue.html">Menu</a></option>
-			<option><a href="about.html">About</a></option>
-			<option><a href="references.html">References</a></option>
-		<br/></select>
+		<div class="topnav">
+				<a href="index.html" class="active">Home</a>
+		<div id="myLinks">
+		<a href="index.html" class="active">Home</a>
+		<a href="catalogue.html">Menu</a>
+		<a href="references.html">References</a>
+		<a href="about.html">About</a>
+		</div>
+		<a href="javascript:void(0);" class="icon" onclick="mobileMenu()">
+		<i class="fa fa-bars"></i>
+	</a>
+	</div>
 	<div class="row">
 	<div class="col-md-3">
 		<div class="panel panel-default">
@@ -49,11 +58,11 @@
 			<div class="jumbotron">
 				<h3 id="lavtitle">Chocolate Croissant</h3>
 				<div class="image-container">
-				<img class="lavenderhoney" src="/images/chocolatecross.png" width= "300px" alt = "chocolate croissant"/>
+				<img class="lavenderhoney" onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="/images/chocolatecross.png" width= "300px" alt = "chocolate croissant"/>
 				</div>
 				<p id="descrip">
 					Enjoy the rich chocolatey flavor and flaky layers of our homemade chocolate croissants; the perfect addition
-					to any beverage.
+					to any beverage. Prices starting at $5.25
 				</p>
 				<br/><p id="cals">
 					655 calories
@@ -68,16 +77,18 @@
 							<legend id="customizetitle">Customize Your Drink</legend>
 							<p class="choices2">
 								<label id="choicetitle">Extras/Toppings: </label><br/>
-								<select name="topopt">
+								<select name="topopt" onChange="topChoice(this.value)">
 									<option></option>
-									<option>Extra Chocolate Drizzle</option>
-									<option>Caramel Drizzle</option>
-									<option>Fruit Spread</option>
-									<option>No Extras/Toppings</option>
+									<option value="5.75">Extra Chocolate Drizzle</option>
+									<option value="5.75">Caramel Drizzle</option>
+									<option value="6.50">Fruit Spread</option>
+									<option value="5.25">No Extras/Toppings</option>
 								</select>
 							</p>
-							<br/><input id= "order" type="submit" value="Add to Order"/>
-							<input id="clear" type="reset" value="Clear" />
+							<br/><input id= "order" onClick="snackMessage();" type="submit" value="Add to Order"/>
+							<input id="clear" type="reset" onClick="snackMessage2();" value="Clear" />
+							<div id="snackbar1">Added to order!</div>
+							<div id="snackbar2">Cleared Choices</div>
 						</fieldset>
 						</form>
 	</div>
