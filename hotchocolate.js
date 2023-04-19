@@ -22,7 +22,6 @@ var typeOfMilk = parseFloat(document.getElementById("typeOfMilk").value);
 
     function whippedCreamChange(value) {
         whippedCream = parseFloat(value);
-        console.log(whippedCream);
         totalAmt();
     }
     
@@ -32,7 +31,6 @@ var typeOfMilk = parseFloat(document.getElementById("typeOfMilk").value);
     }
 
   function totalAmt(){
-        console.log(whippedCream)
         if(typeOfMilk >=0 && sizeOfDrink >=0 && whippedCream >=0 && typeOfChocolate >=0 && warmOrFrozen >=0) {
            var totalSum = typeOfMilk + sizeOfDrink + whippedCream + typeOfChocolate + warmOrFrozen;
             document.getElementById("totalPrice").innerHTML = "$" + totalSum.toFixed(2);

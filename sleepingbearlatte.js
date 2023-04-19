@@ -23,13 +23,11 @@ var typeOfMilk = parseFloat(document.getElementById("typeOfMilk").value);
 
     function whippedCreamChange(value) {
         whippedCream = parseFloat(value);
-        console.log(whippedCream);
         totalAmt()
     }
     
     function sweetenerChange(value) {
         sweetener = parseFloat(value);
-        console.log(sweetener);
         totalAmt()
     }
 
