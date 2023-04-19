@@ -10,27 +10,25 @@
    <link rel="icon" type="image/x-icon" href="images/logo2.png"></link>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script type="text/javascript" src="javascript/baklava.js"></script>
-   <script type="text/javascript">      
-      function calculatePrice() {
-        var size = document.getElementById("size").value;
-        var customizations = document.getElementById("customizations").value;
-        var price = 0;
-        if (size == "small") {
-          price = 4;
-        } else if (size == "medium") {
-          price = 6;
-        } else if (size == "large") {
-          price = 7;
-        } else if (size == "xlarge") {
-          price = 10;
-        }
-        price += customizations;
-        return price;
-      }
+   <script>
+      // Get references to the size selection and price display elements
+      const sizeSelection = document.getElementById('size-selection');
+      const priceDisplay = document.querySelector('.total-price');
     
-      document.querySelector('.order-buttons').addEventListener('click', function() {
-        const totalPrice = calculatePrice();
-        document.getElementById("total-price-value").innerHTML = "$" + totalPrice;
+      // Define the prices for each size option
+      const sizePrices = {
+        small: 10,
+        medium: 15,
+        large: 20,
+      };
+    
+      // Add an event listener to the size selection to update the price
+      sizeSelection.addEventListener('change', () => {
+        const selectedSize = sizeSelection.value;
+        const selectedPrice = sizePrices[selectedSize];
+    
+        // Update the price display with the selected price
+        priceDisplay.textContent = '$' + selectedPrice.toFixed(2);
       });
     </script>
   
@@ -81,22 +79,20 @@
                 It was one of the most popular sweet pastries of Ottoman cuisine.
                </p>
 
-               <form method="post" action="">
-                  <fieldset>
                       <legend>Size</legend>
-                      <form>
-                        <select id="size" name="size" class="custom-select" onchange="calculatePrice()">
+                      
+                        <select id="size-selection" name="size" class="custom-select">
                            <option value="small">Small ($4)</option>
                            <option value="medium">Medium ($6)</option>
                            <option value="large">Large ($7)</option>
                            <option value="xlarge">X-Large ($10)</option>
                         </select><br><br>
-                     </form>
+                     
 
-                  </fieldset>
-               </form>
+
+
                <div class="customizations">
-               <h2>Customizations</h2>
+               <legend>Customizations</legend>
                <div class="row">
                 <div class="col-md-2">
                     <img src="images/pistachio.png" height="50" width="50" alt="Pistachio">
@@ -134,12 +130,8 @@
                </div>
 
                <div class="total-price">
-                  <h2>Total price:</h2>
-                  <label for="total-price">Total price:</label>
-                  <span id="total-price-value">$10</span>                  
-                  <button class="order-buttons">Add to Order</button>
-                  <button class="order-buttons">Cancel</button>
-                </div>
+                  $10.00
+               </div>
 
             </div>
          </div>

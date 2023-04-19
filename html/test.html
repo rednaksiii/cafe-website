@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+</head>    
+
+<body>
+    <!-- Example HTML code with size selection and price display -->
+<select id="size-selection">
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+    <option value="xlarge">X-Large</option>
+</select>
+  
+<div class="total-price">
+    $10.00
+    <button class="order-buttons">Add to Order</button>
+    <button class="order-buttons">Cancel</button>
+</div>
+  
+  <script>
+    // Get references to the size selection and price display elements
+    const sizeSelection = document.getElementById('size-selection');
+    const priceDisplay = document.querySelector('.total-price');
+  
+    // Define the prices for each size option
+    const sizePrices = {
+      small: 10,
+      medium: 15,
+      large: 20,
+    };
+  
+    // Add an event listener to the size selection to update the price
+    sizeSelection.addEventListener('change', () => {
+      const selectedSize = sizeSelection.value;
+      const selectedPrice = sizePrices[selectedSize];
+  
+      // Update the price display with the selected price
+      priceDisplay.textContent = '$' + selectedPrice.toFixed(2);
+    });
+  </script>
+  
+</body>
