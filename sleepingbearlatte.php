@@ -12,6 +12,7 @@
     <title>Sleeping Bear Latte</title>
 </head>
 <body>
+<script src="sleepingbearlatte.js"></script>
   <div class="container-fluid">
     <div class="row">
       <header>
@@ -88,14 +89,14 @@
     </div>
      <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+      <select class="form-control" id="typeOfMilk" onchange="typeOfMilkChange(this.value)">
             <option></option>
-            <option>2% Milk</option>
-            <option>Oat Milk</option>
-            <option>Soy Milk</option>
-            <option>Coconut Milk</option>
-            <option>Whole Milk</option>
-            <option>Almond Milk</option>
+            <option value="3.75">2% Milk ($3.75)</option>
+            <option value= "3.85">Oat Milk($3.85)</option>
+            <option value="4.00">Soy Milk ($4.00)</option>
+            <option value="4.10">Coconut Milk ($4.10)</option>
+            <option value="4.20">Whole Milk ($4.20)</option>
+            <option value="4.25">Almond Milk ($4.25)</option>
           </select>
           <br>
         </div>
@@ -107,12 +108,12 @@
     </div>
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-              <select class="form-control" id="select">
-                <option></option>
-                <option>Tall (16 oz)</option>
-                <option>Grande (24 oz)</option>
-                <option>Large (32 oz)</option>
-              </select>
+          <select class="form-control" id="sizeOfDrink" onchange="sizeOfDrinkChange(this.value)">
+            <option></option>
+            <option value="0.15">Tall (16 oz) ($.0.15)</option>
+            <option value="0.25">Grande (24 oz) ($.0.25)</option>
+            <option value="1.00">Large (32 oz) ($1.00)</option>
+          </select>
               <br>
             </div>
             </div>
@@ -123,12 +124,12 @@
     </div>
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+      <select class="form-control" id="warmOrFrozen" onchange="warmOrFrozenChange(this.value)">
             <option></option>
-            <option>Hot</option>
-            <option>Extra Hot</option>
-            <option>Frozen</option>
-            <option>Extra Frozen</option>
+            <option value="0.10">Hot ($0.10)</option>
+            <option value="0.15">Extra Hot ($0.15)</option>
+            <option value="0.10">Frozen ($0.10)</option>
+            <option value="0.15">Extra Frozen ($0.15)</option>
           </select>
           <br>
         </div>
@@ -140,10 +141,10 @@
     </div>
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-              <select class="form-control" id="select">
+          <select class="form-control" id="whippedCream" onchange="whippedCreamChange(this.value)">
                 <option></option>
-                <option>Whipped Cream</option>
-                <option>No Whipped Cream</option>
+                <option value= "0.10">Whipped Cream ($0.10)</option>
+                <option value="0.00">No Whipped Cream ($0.00)</option>
               </select>
               <br>
             </div>
@@ -155,12 +156,12 @@
         </div>
             <div class="row">
               <div class="col-md-6 col-md-offset-3">
-                  <select class="form-control" id="select">
+                  <select class="form-control" id="sweeteners" onchange="sweetenerChange(this.value)">
                     <option></option>
-                    <option>Sugar</option>
-                    <option>Classic Syrup</option>
-                    <option>Splenda</option>
-                    <option>Honey</option>
+                    <option value="0.10">Sugar(0.10)</option>
+                    <option value= "0.10">Classic Syrup (0.10)</option>
+                    <option value="0.15">Splenda(0.10)</option>
+                    <option value="0.20">Honey (0.10)</option>
                   </select>
                   <br>
                 </div>
@@ -172,10 +173,10 @@
             </div>
                 <div class="row">
                   <div class="col-md-6 col-md-offset-3">
-                      <select class="form-control" id="select">
+                      <select class="form-control" id="marshmallows" onchange="marshmallowChange(this.value)">
                         <option></option>
-                        <option>Marshmallows</option>
-                        <option>No Marshmallows</option>
+                        <option value="0.10">Marshmallows(0.10)</option>
+                        <option value="0.00">No Marshmallows (0.00)</option>
                       </select>
                       <br>
                     </div>
@@ -188,13 +189,16 @@
             </div>
                 <div class="row">
                   <div class="col-md-6 col-md-offset-3">
-                      <select class="form-control" id="select">
+                      <select class="form-control" id="grahamcrackers" onchange="grahamCrackerChange(this.value)">
                         <option></option>
-                        <option>Graham Cracker Crumble</option>
-                        <option>Cookie Crumble</option>
-                        <option>Both</option>
+                        <option value="0.15">Graham Cracker Crumble (0.15)</option>
+                        <option value="0.10"> Cookie Crumble (0.10)</option>
+                        <option value="0.25">Both (0.25)</option>
                       </select>
                       <br>
+                      <div id="totalPrice">
+
+                      </div>
                     </div>
                 </div>
       </div>

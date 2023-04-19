@@ -94,11 +94,11 @@
       <div class="col-md-6 col-md-offset-3">
           <select class="form-control" id="addOn" onchange="addOnTotal(this.value)">
             <option></option>
-            <option value="0.20">Streusel</option>
-            <option value="0.20">Raspberries</option>
-            <option value="0.20">Cinnamon Sugar</option>
-            <option value="0.20">Maple Syrup</option>
-            <option value="0.20">Whipped Cream</option>
+            <option value="0.20">Streusel ($0.20)</option>
+            <option value="0.20">Raspberries($0.20)</option>
+            <option value="0.20">Cinnamon Sugar($0.20)</option>
+            <option value="0.20">Maple Syrup ($0.20)</option>
+            <option value="0.20">Whipped Cream ($0.20)</option>
           </select>
           <br>
         </div>
@@ -112,8 +112,8 @@
       <div class="col-md-6 col-md-offset-3">
           <select class="form-control" id="warmFrozen" onchange="totalAmt(this.value)">
             <option></option>
-            <option value="4.75">Warm</option>
-            <option value= "4.50" >Frozen</option>
+            <option value="4.75">Warm ($4.75)</option>
+            <option value= "4.50" >Frozen ($4.50)</option>
           </select>
           <br>
           <div id="totalPrice"> 

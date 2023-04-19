@@ -12,6 +12,7 @@
     <title>Pecan Pie</title>
 </head>
 <body>
+<script src="pecanpie.js"></script>
   <div class="container-fluid">
     <div class="row">
       <header>
@@ -89,10 +90,10 @@
     </div>
      <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+          <select class="form-control" id="whippedCream" onchange="totalAmt()">
             <option></option>
-            <option>Whipped Cream</option>
-            <option>No Whipped Cream</option>
+            <option value="0.15">Whipped Cream ($0.15)</option>
+            <option value="0.00">No Whipped Cream ($0.00)</option>
           </select>
           <br>
         </div>
@@ -104,13 +105,15 @@
     </div>
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+          <select class="form-control" id="warmColdOrRoomTemp" onchange="totalAmt()">
             <option></option>
-            <option>Warm</option>
-            <option>Cold</option>
-            <option>Room Temperature</option>
+          <option value="2.00">Warm ($2.00)</option>
+            <option value="2.15">Cold ($2.15)</option>
+            <option value="1.85">Room Temperature ($1.85)</option>
           </select>
           <br>
+          <div id="totalPrice"> 
+          </div>
         </div>
         </div>
       </div>

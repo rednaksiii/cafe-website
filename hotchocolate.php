@@ -12,6 +12,7 @@
     <title>Hot Chocolate</title>
 </head>
 <body>
+<script src="hotchocolate.js"></script>
   <div class="container-fluid">
     <div class="row">
       <header>
@@ -87,14 +88,14 @@
     </div>
      <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+          <select class="form-control" id="typeOfMilk" onchange="typeOfMilkChange(this.value)">
             <option></option>
-            <option value="3.75">2% Milk</option>
-            <option value= "3.85">Oat Milk</option>
-            <option value="4.00">Soy Milk</option>
-            <option value="4.10">Coconut Milk</option>
-            <option value="4.20">Whole Milk</option>
-            <option value="4.25">Almond Milk</option>
+            <option value="3.75">2% Milk ($3.75)</option>
+            <option value= "3.85">Oat Milk($3.85)</option>
+            <option value="4.00">Soy Milk ($4.00)</option>
+            <option value="4.10">Coconut Milk ($4.10)</option>
+            <option value="4.20">Whole Milk ($4.20)</option>
+            <option value="4.25">Almond Milk ($4.25)</option>
           </select>
           <br>
         </div>
@@ -106,11 +107,11 @@
     </div>
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+          <select class="form-control" id="sizeOfDrink" onchange="sizeOfDrinkChange(this.value)">
             <option></option>
-            <option value="0.15">Tall (16 oz)</option>
-            <option value="0.25">Grande (24 oz)</option>
-            <option value="1.00">Large (32 oz)</option>
+            <option value="0.15">Tall (16 oz) ($.0.15)</option>
+            <option value="0.25">Grande (24 oz) ($.0.25)</option>
+            <option value="1.00">Large (32 oz) ($1.00)</option>
           </select>
           <br>
         </div>
@@ -122,12 +123,12 @@
     </div>
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="select">
+          <select class="form-control" id="warmOrFrozen" onchange="warmOrFrozenChange(this.value)">
             <option></option>
-            <option value="0.10">Hot</option>
-            <option value="0.15">Extra Hot</option>
-            <option value="0.10">Frozen</option>
-            <option value="0.15">Extra Frozen</option>
+            <option value="0.10">Hot ($0.10)</option>
+            <option value="0.15">Extra Hot ($0.15)</option>
+            <option value="0.10">Frozen ($0.10)</option>
+            <option value="0.15">Extra Frozen ($0.15)</option>
           </select>
           <br>
         </div>
@@ -139,10 +140,10 @@
     </div>
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-              <select class="form-control" id="select">
+              <select class="form-control" id="whippedCream" onchange="whippedCreamChange(this.value)">
                 <option></option>
-                <option>Whipped Cream</option>
-                <option>No Whipped Cream</option>
+                <option value= "0.10">Whipped Cream ($0.10)</option>
+                <option value="0.00">No Whipped Cream ($0.00)</option>
               </select>
               <br>
             </div>
@@ -154,13 +155,15 @@
         </div>
             <div class="row">
               <div class="col-md-6 col-md-offset-3">
-                  <select class="form-control" id="select">
+                  <select class="form-control" id="typeOfChocolate" onchange="typeOfChocolateChange(this.value)">
                     <option></option>
-                    <option value="0.15">Dark Chocolate</option>
-                    <option value="0.15">Milk Chocolate</option>
-                    <option value="0.15">White Chocolate</option>
+                    <option value="0.15">Dark Chocolate ($0.15)</option>
+                    <option value="0.15">Milk Chocolate ($0.15)</option>
+                    <option value="0.15">White Chocolate ($0.15)</option>
                   </select>
                   <br>
+                  <div id="totalPrice"> 
+          </div>
                 </div>
                 </div>
       </div>
