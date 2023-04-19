@@ -32,20 +32,43 @@ function normalImg(x) {
 }
 
 //function for pricing
-function getPrice(myForm) {
-	
-	var price = 4.45;
-	
-	var milkOpt = parseInt(document.getElementByName("milkopt").value);
-	var foamOpt = parseInt(document.getElementByName("foamopt").value);
-	var topOpt =  parseInt(document.getElementByName("topopt").value);
-	var size =  parseInt(document.getElementByName("size").value);
-	var total = price + milkOpt + foamOpt + topOpt + size;
+var milkopt = parseFloat(document.getElementById("milkopt").value);
+var foamopt = parseFloat(document.getElementById("foamopt").value);
+var topopt = parseFloat(document.getElementById("topopt").value);
+var size = parseFloat(document.getElementById("size").value);
 
+function milkChoice(value) {
 	
-	document.getElementById("tester").innerHTML = total;
+	milkopt = parseFloat(value);
+	totalPrice()
+}
 
+function foamChoice(value) {
+	
+	foamopt = parseFloat(value);
+	totalPrice()
+}
+
+function topChoice(value) {
+	
+	topopt = parseFloat(value);
+	totalPrice()
+}
+
+function sizeChoice(value) {
+	
+	size = parseFloat(value);
+	totalPrice()
+}
+
+function totalPrice() {
+	
+	if (milkopt >= 0 && foamopt >= 0 && topopt >= 0 && size >= 0){
+		
+		subTotal = milkopt + foamopt + topopt + size;
+		document.getElementById("totalPrice").innerHTML = "$" + subTotal.toFixed(2);
 	}
+}
 //snackbar messages	
 function snackMessage() {
   var x = document.getElementById("snackbar1");
