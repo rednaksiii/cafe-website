@@ -11,7 +11,7 @@ header
 	border: 0;
 	background-color: white;
 	background-image: url("/images/coffeebean.jpg");
-	background-size: cover;
+	background-size: contain;
 	color: white;
 }
 
