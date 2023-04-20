@@ -1,7 +1,6 @@
 //Amber Awadi
-//JavaScript page for individual web pages
+//JavaScript file for Cinnamon Latte
 
-//active tab event listener
 var navItems = document.querySelectorAll(".nav-item");
 for (var i = 0; i < navItems.length; i++) {
    navItems[i].addEventListener("click", function() {
@@ -30,8 +29,8 @@ function normalImg(x) {
   x.style.height = "300px";
   x.style.width = "300px";
 }
-
 //function for pricing
+
 var milkopt = parseFloat(document.getElementById("milkopt").value);
 var foamopt = parseFloat(document.getElementById("foamopt").value);
 var topopt = parseFloat(document.getElementById("topopt").value);
@@ -69,6 +68,7 @@ function totalPrice() {
 		document.getElementById("totalPrice").innerHTML = "$" + subTotal.toFixed(2);
 	}
 }
+
 //snackbar messages	
 function snackMessage() {
   var x = document.getElementById("snackbar1");

@@ -113,6 +113,19 @@ h3 {
 	
 }
 
+.map {
+	padding-bottom: 50%;
+	position: relative;
+}
+
+.map iframe {
+	height: 100%;
+	width: 100%;
+	left:0;
+	top:0;
+	position: absolute;
+}
+
 footer {
 	font-style: italic;
 }

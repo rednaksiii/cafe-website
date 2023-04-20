@@ -81,7 +81,7 @@
 							<legend id="customizetitle">Customize Your Drink</legend>
 							<p class="choices">
 								<label id="choicetitle">Milk Choice: </label><br/>
-								<select name="milkopt">
+								<select id="milkopt" onChange="milkChoice(this.value)">
 									<option></option>
 									<option value="0.00">2% Milk</option>
 									<option value="0.25">Whole Milk</option>
@@ -92,7 +92,7 @@
 							</p>
 							<p class="choices">
 								<label id="choicetitle">Foam Choice: </label><br/>
-								<select name="foamopt">
+								<select id="foamopt"  onChange="foamChoice(this.value)">
 									<option></option>
 									<option value="0.15">2% Milk Foam</option>
 									<option value="0.00">Non-Dairy Foam</option>
@@ -101,7 +101,7 @@
 							</p>
 							<p class="choices2">
 								<label id="choicetitle">Extras/Toppings: </label><br/>
-								<select name="topopt">
+								<select id="topopt" onChange="topChoice(this.value)">
 									<option></option>
 									<option value="0.25">Lavender Sprinkle</option>
 									<option value="0.30">Sugar Cookie Dust</option>
@@ -111,13 +111,14 @@
 							</p>
 							<p class="choices2">
 								<label id="choicetitle">Size: </label><br/>
-								<select name="size">
+								<select id="size" onChange="sizeChoice(this.value)">
 									<option></option>
-									<option value="0.00">Small</option>
-									<option value="0.25">Medium</option>
-									<option value="0.50">Large</option>
+									<option value="4.45">Small</option>
+									<option value="4.70">Medium</option>
+									<option value="4.95">Large</option>
 								</select>
 							</p>
+							<div id="totalPrice"> </div>
 							<br/><input id= "order" type="submit" value="Add to Order" onclick="snackMessage();"/>
 							<input id="clear" type="reset" value="Clear" onclick="snackMessage2();" />
 							<div id="snackbar1">Added to order!</div>

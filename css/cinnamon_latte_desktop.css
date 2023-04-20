@@ -1,5 +1,5 @@
 /* Amber Awadi
- Lavender Honey Tea Latte Desktop CSS Page*/
+Lavender Honey Tea Latte CSS Page Mobile Version */
 
 header
 {
@@ -10,23 +10,57 @@ header
 	vertical-align: baseline;
 	border: 0;
 	background-color: white;
-	background-image: url("/images/coffeebean.jpg");
-	background-size: contain;
+	background-image: url("images/coffeebean.jpg");
+	background-size: cover;
 	color: white;
 }
 
 #navbar {
+	display: none;
 	background-color: #F1DABF;
+	border: 4mm ridge rgba(54, 36, 23, 1);
 	padding: 2px;
-	padding-bottom: 0;
-
 	
 }
 
-#navi {
-	padding-bottom: 0;
-	margin-bottom: 0;
-	color: #362417!important;
+.topnav {
+  overflow: hidden;
+  background-color: #04AA6D!important;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+  background-color: #A9927D!important;
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+  
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #362417!important;
+  color: black;
+}
+
+.active {
+  background-color: #362417;
+  color: white !important;
+  font-family: Georgia, Cambria, "Times New Roman", serif;
 }
 
 
@@ -47,7 +81,6 @@ li a{
 	display: block;
 	text-align: center;
 	padding: 12px 14px;
-	color: #362417;
 }
 
 li a:hover {
@@ -56,15 +89,12 @@ li a:hover {
 
 .list-group {
 	float: left;
+	color: #362417;
 }
 
-#mobilemenu {
-	
-	display: none;
-}
 
 a:link {
-	color: #362417 !important;
+	color: #362417;
 	font-size: 16px;
 }
 
@@ -75,7 +105,6 @@ a:visited {
 .panel-heading {
 	background-color: #362417 !important;
 	color: white;
-	border: 4mm ridge rgba(54, 36, 23, 1);
 }
 
 #rec {
@@ -87,7 +116,7 @@ a:visited {
 
 .panel-body {
 	background-color: white;
-	background-image: url("/images/tanstripes.jpg");
+	background-image: url("images/tanstripes.jpg");
 	background-size: contain;
 	border: 4mm ridge rgba(54, 36, 23, 1);
 }
@@ -112,7 +141,7 @@ a:visited {
 }
 
 #descrip {
-	float: left;
+	float: right;
 	font-size: 12pt;
 }
 
@@ -155,6 +184,12 @@ a:visited {
 	margin: 4px 2px;
 }
 
+#order:hover {
+	background-color: #C82E2E;
+	box-shadow: 3px 2px 22px 1px rgba(0,0,0,0.24);
+	
+}
+
 #clear {
 	color: black;
 	background-color: #C82E2E;
@@ -163,4 +198,51 @@ a:visited {
 	border-radius: 4px;
 	padding: 12px 12px;
 	margin: 4px 2px;
+}
+
+#clear:hover {
+	
+	background-color: #2196F3;
+}
+
+#snackbar1, #snackbar2 {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar1.show , #snackbar2.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }

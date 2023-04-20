@@ -12,7 +12,7 @@
     <title>Pecan Pie</title>
 </head>
 <body>
-<script src="/javascript/apecanpie.js"></script>
+<script src="/javascript/pecanpie.js"></script>
   <div class="container-fluid">
     <div class="row">
       <header>
@@ -124,7 +124,7 @@
         <button type="reset" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
         </div>
         <div class="pull-right">
-        <button type="submit" class="btn btn-success submitBtn" data-inline="true">Order</button>
+        <button onclick="sendDataObject();" class="btn btn-success submitBtn" data-inline="true">Order</button>
       </div>
     </div>
     </div>
