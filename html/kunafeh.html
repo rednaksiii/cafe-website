@@ -57,28 +57,20 @@
                 and typically layered with cheese, or with other ingredients 
                 such as clotted cream, pistachio or nuts.
                </p>
-
-            </form>
-            <form method="post" action="">
-               <fieldset>
                    <legend>Size</legend>
-                   <select name="size" class="custom-select">
-                       <option style="color:black">Small</option>
-                       <option style="color:black">Medium</option>
-                       <option style="color:black">Large</option>
-                       <option style="color:black">XLarge</option>
-                   </select>
-                   <button class="order-buttons">Add to Order</button>
-                   <button class="order-buttons">Cancel</button>
+                   <select id="size-selection" name="size" class="custom-select">
+                       <option value="small">Small ($4.00)</option>
+                       <option value="medium">Medium ($6.00)</option>
+                       <option value="large">Large ($7.00)</option>
+                       <option value="xlarge">XLarge ($10.00)</option>
+                   </select><br><br>
 
-               </fieldset>
-            </form>
-
-               <h2>Customizations</h2>
+               <div class="customizations">    
+               <legend>Customizations</legend>
                <div class="row">
                 <div class="col-md-2">
                     <img src="/images/pistachio.png" height="50" width="50" alt="Pistachio">
-                     <h5>Pistachio</h5>
+                     <h5>Pistachio ($1.00)</h5>
                      <button id="pistachio" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
@@ -86,7 +78,7 @@
                 </div>
                 <div class="col-md-2">
                      <img src="/images/almonds.png" height="50" width="50" alt="Almonds">
-                     <h5>Almonds</h5>
+                     <h5>Almonds ($1.00)</h5>
                      <button id="almonds" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
@@ -94,7 +86,7 @@
                 </div>
                <div class="col-md-2">
                 <img src="/images/wallnut.png" height="50" width="50" alt="Walnut">
-                 <h5>Walnut</h5>
+                 <h5>Walnut ($1.00)</h5>
                  <button id="walnut" type="button" class="btn btn-success">
                     <span class="glyphicon glyphicon-shopping-cart"
                           aria-hidden="true"></span> Add
@@ -103,7 +95,7 @@
 
                 <div class="col-md-2">
                     <img src="/images/cream.png" height="50" width="50" alt="Cream">
-                     <h5>Cream</h5>
+                     <h5>Cream ($1.00)</h5>
                      <button id="cream" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
@@ -111,7 +103,73 @@
                 </div>
             </div>
          </div>
+         <br>
+         <div>
+               <legend>Total</legend>
+               <div class="total-price">$4.00</div>
+               <br>
+               <button class="order-buttons">Add to Order</button>
+               <button class="order-buttons">Cancel</button>            
+            </div>
       </div>
    </div>
+</div>
+</div>
+
+<script>
+// Get references to the size selection and price display elements
+const sizeSelection = document.getElementById('size-selection');
+const priceDisplay = document.querySelector('.total-price');
+
+// Define the prices for each size option and each customization
+const sizePrices = {
+  small: 4,
+  medium: 6,
+  large: 7,
+  xlarge: 10
+};
+
+const customizationPrices = {
+  pistachio: 1,
+  almonds: 1,
+  walnut: 1,
+  cream: 1
+};
+
+let selectedCustomizations = [];
+
+// Add an event listener to the size selection to update the price
+sizeSelection.addEventListener('change', () => {
+  updateTotalPrice();
+});
+
+// Add event listeners to the customization buttons
+document.querySelectorAll('.customizations button').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    const customizationId = event.currentTarget.id;
+    const index = selectedCustomizations.indexOf(customizationId);
+    if (index === -1) {
+      // The customization has not been added yet, so add it
+      selectedCustomizations.push(customizationId);
+    } else {
+      // The customization has already been added, so remove it
+      selectedCustomizations.splice(index, 1);
+    }
+    updateTotalPrice();
+  });
+});
+
+// Updates the total price based on the currently selected size and customizations
+function updateTotalPrice() {
+  const selectedSize = sizeSelection.value;
+  let totalPrice = sizePrices[selectedSize];
+  selectedCustomizations.forEach((customizationId) => {
+    totalPrice += customizationPrices[customizationId];
+  });
+  priceDisplay.textContent = '$' + totalPrice.toFixed(2);
+}
+</script>
+
+
 </body>
 </html>

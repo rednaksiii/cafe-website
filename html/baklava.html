@@ -56,25 +56,21 @@
                 filled with chopped nuts, and sweetened with syrup or honey. 
                 It was one of the most popular sweet pastries of Ottoman cuisine.
                </p>
-
                       <legend>Size</legend>
                       
                         <select id="size-selection" name="size" class="custom-select">
-                           <option value="small">Small ($4)</option>
-                           <option value="medium">Medium ($6)</option>
-                           <option value="large">Large ($7)</option>
-                           <option value="xlarge">X-Large ($10)</option>
+                           <option value="small">Small ($4.00)</option>
+                           <option value="medium">Medium ($6.00)</option>
+                           <option value="large">Large ($7.00)</option>
+                           <option value="xlarge">X-Large ($10.00)</option>
                         </select><br><br>
                      
-
-
-
                <div class="customizations">
                <legend>Customizations</legend>
                <div class="row">
                 <div class="col-md-2">
                     <img src="/images/pistachio.png" height="50" width="50" alt="Pistachio">
-                     <h5>Pistachio ($1)</h5>
+                     <h5>Pistachio ($1.00)</h5>
                      <button id="pistachio" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
@@ -82,7 +78,7 @@
                 </div>
                 <div class="col-md-2">
                      <img src="/images/almonds.png" height="50" width="50" alt="Almonds">
-                     <h5>Almonds ($1)</h5>
+                     <h5>Almonds ($1.00)</h5>
                      <button id="almonds" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
@@ -91,7 +87,7 @@
                 
                <div class="col-md-2">
                 <img src="/images/wallnut.png" height="50" width="50" alt="Walnut">
-                 <h5>Walnut ($1)</h5>
+                 <h5>Walnut ($1.00)</h5>
                  <button id="walnut" type="button" class="btn btn-success">
                     <span class="glyphicon glyphicon-shopping-cart"
                           aria-hidden="true"></span> Add
@@ -99,10 +95,10 @@
                </div>
                <div class="col-md-2">
                   <img src="/images/ice-cream.png" height="50" width="50" alt="Ice Cream">
-                   <h5>Cream ($1)</h5>
+                   <h5>Ice Cream ($1.00)</h5>
                    <button id="icecream" type="button" class="btn btn-success">
                       <span class="glyphicon glyphicon-shopping-cart"
-                            aria-hidden="true"></span> Add
+                           aria-hidden="true"></span> Add
                    </button>
                  </div>
                </div>
@@ -119,40 +115,60 @@
          </div>
       </div>
    </div>
-   <script>
-      // Get references to the size selection and price display elements
-      const sizeSelection = document.getElementById('size-selection');
-      const priceDisplay = document.querySelector('.total-price');
-    
-      // Define the prices for each size option
-      const sizePrices = {
-        small: 4,
-        medium: 6,
-        large: 7,
-        xlarge: 10
-      };
-    
-      // Add an event listener to the size selection to update the price
-      sizeSelection.addEventListener('change', () => {
-        const selectedSize = sizeSelection.value;
-        const selectedPrice = sizePrices[selectedSize];
-    
-        // Update the price display with the selected price
-        priceDisplay.textContent = '$' + selectedPrice.toFixed(2);
-      });
 
-      function updatePrice() {
-      // Get the number of customizations
-      var numCustomizations = parseInt(document.getElementById('customizations').value);
-  
-      // Calculate the total price
-      var totalPrice = numCustomizations * 1;
-  
-      // Update the price display
-      document.getElementById('total-price').innerHTML = '$' + totalPrice.toFixed(2);
+<script>
+// Get references to the size selection and price display elements
+const sizeSelection = document.getElementById('size-selection');
+const priceDisplay = document.querySelector('.total-price');
+
+// Define the prices for each size option and each customization
+const sizePrices = {
+  small: 4,
+  medium: 6,
+  large: 7,
+  xlarge: 10
+};
+
+const customizationPrices = {
+  pistachio: 1,
+  almonds: 1,
+  walnut: 1,
+  icecream: 1
+};
+
+let selectedCustomizations = [];
+
+// Add an event listener to the size selection to update the price
+sizeSelection.addEventListener('change', () => {
+  updateTotalPrice();
+});
+
+// Add event listeners to the customization buttons
+document.querySelectorAll('.customizations button').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    const customizationId = event.currentTarget.id;
+    const index = selectedCustomizations.indexOf(customizationId);
+    if (index === -1) {
+      // The customization has not been added yet, so add it
+      selectedCustomizations.push(customizationId);
+    } else {
+      // The customization has already been added, so remove it
+      selectedCustomizations.splice(index, 1);
+    }
+    updateTotalPrice();
+  });
+});
+
+// Updates the total price based on the currently selected size and customizations
+function updateTotalPrice() {
+  const selectedSize = sizeSelection.value;
+  let totalPrice = sizePrices[selectedSize];
+  selectedCustomizations.forEach((customizationId) => {
+    totalPrice += customizationPrices[customizationId];
+  });
+  priceDisplay.textContent = '$' + totalPrice.toFixed(2);
 }
-
-    </script>
+</script>
 
 
 </body>

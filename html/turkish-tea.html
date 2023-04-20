@@ -59,26 +59,20 @@
                 robust flavor and deep red color.
                </p>
 
-               <form method="post" action="">
-                  <fieldset>
-                      <legend>Size</legend>
-                      <select name="size" class="custom-select">
-                          <option style="color:black">Small</option>
-                          <option style="color:black">Medium</option>
-                          <option style="color:black">Large</option>
-                          <option style="color:black">XLarge</option>
-                      </select>
-                      <button class="order-buttons">Add to Order</button>
-                      <button class="order-buttons">Cancel</button>
+               <legend>Size</legend>
+               <select id="size-selection" name="size" class="custom-select">
+                     <option value="small" style="color:black">Small ($0.5)</option>
+                     <option value="medium" style="color:black">Medium ($0.75) </option>
+                     <option value="large" style="color:black">Large ($1.00)</option>
+                     <option value="xlarge" style="color:black">X-Large ($1.25)</option>
+               </select><br><br>
 
-                  </fieldset>
-               </form>
-
-               <h2>Customizations</h2>
+               <div class="customizations">
+               <legend>Customizations</legend>
                <div class="row">
                 <div class="col-md-2">
                     <img src="/images/sugar.png" height="50" width="50" alt="Sugar">
-                     <h5>Sugar</h5>
+                     <h5>Sugar <br> ($0.30)</h5>
                      <button id="sugar" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
@@ -86,16 +80,79 @@
                 </div>
                 <div class="col-md-2">
                      <img src="/images/lemon.png" height="50" width="50" alt="Lemon">
-                     <h5>Lemon</h5>
+                     <h5>Lemon ($0.30)</h5>
                      <button id="lemon" type="button" class="btn btn-success">
                         <span class="glyphicon glyphicon-shopping-cart"
                               aria-hidden="true"></span> Add
                      </button>
                   </div>
                </div>
+               <br>
+               <div>
+                  <legend>Total</legend>
+                  <div class="total-price">$0.50</div>
+                  <br>
+                  <button class="order-buttons">Add to Order</button>
+                  <button class="order-buttons">Cancel</button>
+               </div>
             </div>
          </div>
       </div>
    </div>
+
+<script>
+      // Get references to the size selection and price display elements
+      const sizeSelection = document.getElementById('size-selection');
+      const priceDisplay = document.querySelector('.total-price');
+      
+      // Define the prices for each size option and each customization
+      const sizePrices = {
+        small: 0.5,
+        medium: 0.75,
+        large: 1,
+        xlarge: 1.25
+      };
+      
+      const customizationPrices = {
+        lemon: 0.3,
+        sugar: 0.3,
+   
+      };
+      
+      let selectedCustomizations = [];
+      
+      // Add an event listener to the size selection to update the price
+      sizeSelection.addEventListener('change', () => {
+        updateTotalPrice();
+      });
+      
+      // Add event listeners to the customization buttons
+      document.querySelectorAll('.customizations button').forEach((button) => {
+        button.addEventListener('click', (event) => {
+          const customizationId = event.currentTarget.id;
+          const index = selectedCustomizations.indexOf(customizationId);
+          if (index === -1) {
+            // The customization has not been added yet, so add it
+            selectedCustomizations.push(customizationId);
+          } else {
+            // The customization has already been added, so remove it
+            selectedCustomizations.splice(index, 1);
+          }
+          updateTotalPrice();
+        });
+      });
+      
+      // Updates the total price based on the currently selected size and customizations
+      function updateTotalPrice() {
+        const selectedSize = sizeSelection.value;
+        let totalPrice = sizePrices[selectedSize];
+        selectedCustomizations.forEach((customizationId) => {
+          totalPrice += customizationPrices[customizationId];
+        });
+        priceDisplay.textContent = '$' + totalPrice.toFixed(2);
+      }  
+
+</script>   
+
 </body>
 </html>
