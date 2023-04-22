@@ -30,7 +30,8 @@ function addToCart(selectedValue,totalPrice,buttonValue) {
     }).done(function(Response) {
       location.href = "/php/checkout.php";
     }).fail(function(Response) {
-      alert("Error thrown!");
+      //alert("Error thrown!");
+      location.href = "/php/checkout.php";
   });
 }
 /*
