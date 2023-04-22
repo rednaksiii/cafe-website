@@ -4,15 +4,39 @@ var whipped = 0;
 var total = 0;
 
 function addToCart() {
+  
   var sizeSelect = document.querySelector('select[name="size"]');
   var selectedValue = sizeSelect.value;
   var selectedFloat = parseFloat(selectedValue);
 
-  var addOnPrice = whipped + chocolate;
-  var totalPrice = selectedFloat + addOnPrice;
-  alert('Selected Value: '+selectedFloat+' addons: '+addOnPrice+" totalprice: "+totalPrice)
-  const mysql = require('mysql');
+  var addOnsum = whipped + chocolate;
+  var totalPrice = selectedFloat + addOnsum;
+  
+  //alert('Selected Value: '+selectedFloat+' addons: '+addOnsum+" totalprice: "+totalPrice);
+  let myObj = {
+    name: "Reese's Pie",
+    image: "/images/reesespieimage.png",
+    price: selectedFloat,
+    AddonPrice: addOnsum,
+    totalPrice: totalPrice
+  }
+  var myObjString = JSON.stringify(myObj);
+  $.ajax({
+    type: "POST",
+      url: '/php/insertinshoppingtable.php',
+      data: {myObject: myObjString},
+      contentType: "application/json; charset=utf-8",
+      async: false,
+      cache: false
+    }).done(function(Response) {
+      location.href = "/php/checkout.php";
+    }).fail(function(Response) {
+      alert("Error thrown!");
+  });
+}
 
+/*
+  const mysql = require('mysql');
   const connection = mysql.createConnection({
     host: 'localhost',
     database: 'yourdatabase'
@@ -35,7 +59,7 @@ function addToCart() {
 
   connection.end();
 }
-
+*/
 $(document).ready(function(){
   $('#ChocolateSauce').click(function(){
       chocolate = parseInt($(this).val());

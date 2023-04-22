@@ -2,9 +2,29 @@
 var addOnPrice = 0;
 
 function addToCart(selectedValue,totalPrice) {
-  alert('Selected Value: ' + selectedValue + ' addons: ' + addOnPrice + " totalprice: " + totalPrice);
-  
-  const mysql = require('mysql');
+  //alert('Selected Value: ' + selectedValue + ' addons: ' + addOnPrice + " totalprice: " + totalPrice);
+  let myObj = {
+    name: "Fruit Smoothie",
+    image: "/images/strawsmooth.png",
+    price: selectedValue,
+    AddonPrice: addOnPrice,
+    totalPrice: totalPrice
+  }
+  var myObjString = JSON.stringify(myObj);
+  $.ajax({
+    type: "POST",
+      url: '/php/insertinshoppingtable.php',
+      data: {myObject: myObjString},
+      contentType: "application/json; charset=utf-8",
+      async: false,
+      cache: false
+    }).done(function(Response) {
+      location.href = "/php/checkout.php";
+    }).fail(function(Response) {
+      alert("Error thrown!");
+  });
+}
+  /*const mysql = require('mysql');
 
   const connection = mysql.createConnection({
     host: 'localhost',
@@ -28,7 +48,7 @@ function addToCart(selectedValue,totalPrice) {
 
   connection.end();
 }
-
+*/
 $(document).ready(function(){
   $('.add-button').click(function(){
     // Deselect all buttons

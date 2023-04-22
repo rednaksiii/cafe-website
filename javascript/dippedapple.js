@@ -1,18 +1,39 @@
 
 function addToCart(selectedValue,totalPrice,buttonValue) {
-  alert('Selected Value: ' + buttonValue + ' addons: ' + selectedValue + " totalprice: " + totalPrice);
+  //alert('Selected Value: ' + buttonValue + ' addons: ' + selectedValue + " totalprice: " + totalPrice);
   var addOnPrice = selectedValue;
-  const mysql = require('mysql');
+  //const mysql = require('mysql');
 
-  const connection = mysql.createConnection({
-    host: 'localhost',
-    database: 'yourdatabase'
+  //const connection = mysql.createConnection({
+    //host: 'localhost',
+    //database: 'yourdatabase'
+  //});
+
+  //const name = "Dipped Apple";
+  //const image = "/images/reesespieimage.png";
+  //const price = buttonValue;
+  let myObj = {
+    name: "Dipped Apple",
+    image: "/images/Carmelapple.png",
+    price: buttonValue,
+    AddonPrice: selectedValue,
+    totalPrice: totalPrice
+  }
+  var myObjString = JSON.stringify(myObj);
+  $.ajax({
+    type: "POST",
+      url: '/php/insertinshoppingtable.php',
+      data: {myObject: myObjString},
+      contentType: "application/json; charset=utf-8",
+      async: false,
+      cache: false
+    }).done(function(Response) {
+      location.href = "/php/checkout.php";
+    }).fail(function(Response) {
+      alert("Error thrown!");
   });
-
-  const name = "Reese's Pie";
-  const image = "/images/reesespieimage.png";
-  const price = buttonValue;
-
+}
+/*
   const sql = `INSERT INTO shoppingCart (name, image, price, AddOnPrice, totalPrice) VALUES (?, ?, ?, ?, ?)`;
   const values = [name, image, price, addOnPrice, totalPrice];
   connection.query(sql, values, (error, results, fields) => {
@@ -25,7 +46,7 @@ function addToCart(selectedValue,totalPrice,buttonValue) {
 
   connection.end();
 }
-
+*/
 $(document).ready(function(){
   $('.add-button').click(function(){
     // Deselect all buttons
