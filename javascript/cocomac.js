@@ -1,5 +1,5 @@
 //Amber Awadi
-//JavaScript file for Cinnamon Latte
+//JavaScript page for coconut macaroons
 
 var navItems = document.querySelectorAll(".nav-item");
 for (var i = 0; i < navItems.length; i++) {
@@ -31,22 +31,8 @@ function normalImg(x) {
 }
 //function for pricing
 
-var milkopt = parseFloat(document.getElementById("milkopt").value);
-var foamopt = parseFloat(document.getElementById("foamopt").value);
 var topopt = parseFloat(document.getElementById("topopt").value);
-var size = parseFloat(document.getElementById("size").value);
 
-function milkChoice(value) {
-	
-	milkopt = parseFloat(value);
-	totalPrice()
-}
-
-function foamChoice(value) {
-	
-	foamopt = parseFloat(value);
-	totalPrice()
-}
 
 function topChoice(value) {
 	
@@ -54,17 +40,11 @@ function topChoice(value) {
 	totalPrice()
 }
 
-function sizeChoice(value) {
-	
-	size = parseFloat(value);
-	totalPrice()
-}
-
 function totalPrice() {
 	
-	if (milkopt >= 0 && foamopt >= 0 && topopt >= 0 && size >= 0){
+	if (topopt >= 0){
 		
-		subTotal = milkopt + foamopt + topopt + size;
+		subTotal = topopt;
 		document.getElementById("totalPrice").innerHTML = "$" + subTotal.toFixed(2);
 	}
 }
@@ -72,10 +52,10 @@ function totalPrice() {
 function sendDataObject() {
     //  location.href = "/php/checkout.php";
     let myObj = {
-        name: "Cinnamon Tea Latte",
-        image: "/images/cinnamon_latte.png",
-        price: subTotal
-        AddOnPrice: 
+        name: "Chocolate Croissant",
+        image: "/images/chococross.png",
+        price: topopt
+        AddOnPrice:
         totalPrice: totalPrice
 
     }
