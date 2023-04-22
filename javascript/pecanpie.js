@@ -1,21 +1,57 @@
-function totalAmt() {
-    var whippedCreamSel = document.getElementById("whippedCream");
-    var text = whippedCreamSel.options[whippedCreamSel.selectedIndex].text;
-    console.log(text);
-    var whippedCream = Number(document.getElementById("whippedCream").value);
-   /* console.log(document.getElementById("whippedCream").innerText);
-    var something = document.getElementById("whippedCream").innerText;
-    console.log(something); */
-    var warmColdOrRoomTemp = Number(document.getElementById("warmColdOrRoomTemp").value);
-    if(whippedCream >= 0 && warmColdOrRoomTemp >= 0) {
-        var totalSum = whippedCream += warmColdOrRoomTemp;
-        document.getElementById("totalPrice").innerHTML = "$" + totalSum.toFixed(2);
+var whippedCreamSel =parseFloat(document.getElementById("whippedCream").value);
+var warmColdOrRoomTemp =parseFloat(document.getElementById("warmColdOrRoomTemp").value);
+var totalSum;
+var priceVal;
+var addOnSum;
+function whippedCreamChange(value) {
+     whippedCreamSel =  parseFloat(value);
+    totalAmt();
+}
+
+    function warmOrFrozen(value) {
+        warmColdOrRoomTemp = parseFloat(value);
+        totalAmt();
     }
+
+    function totalAmt()
+    {
+        if(whippedCreamSel >= 0 && warmColdOrRoomTemp >= 0) {
+            totalSum = whippedCreamSel += warmColdOrRoomTemp;
+            document.getElementById("totalPrice").innerHTML = "$" + totalSum.toFixed(2);
+        }
+        addOnSum = totalSum - warmColdOrRoomTemp;
+        priceVal = totalSum - addOnSum;
 
     }
 
     function sendDataObject() {
-
-
-
-    }
+        //  location.href = "/php/checkout.php";
+        let myObj = {
+            name: "Pecan Pie",
+            image: "/images/Pecan Pie Transparent.png",
+            price: priceVal,
+            AddOnPrice: addOnSum,
+            totalPrice: totalSum
+    
+          }
+          var myObjString = JSON.stringify(myObj);
+    
+    
+        $.ajax({
+          type: "POST",
+          url: '/php/insertinshoppingtable.php',
+          data: {myObject: myObjString},
+          dataType: "json",
+          async: false,
+          cache: false
+        }).done(function(Response) {
+         // location.href = "/php/checkout.php";
+         console.log(Response);
+        }).fail(function(Response) {
+            console.log(Response);
+          location.href = "/php/checkout.php";
+      
+      });
+    
+        }
+    

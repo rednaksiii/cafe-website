@@ -60,13 +60,14 @@ var typeOfMilk = parseFloat(document.getElementById("typeOfMilk").value);
       type: "POST",
       url: '/php/insertinshoppingtable.php',
       data: {myObject: myObjString},
-      contentType: "application/json; charset=utf-8",
+      dataType: "json",
       async: false,
       cache: false
     }).done(function(Response) {
-      location.href = "/php/checkout.php";
+     // location.href = "/php/checkout.php";
+     console.log(Response);
     }).fail(function(Response) {
-      alert("Error thrown!");
+      location.href = "/php/checkout.php";
   
   });
 

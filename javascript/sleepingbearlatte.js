@@ -5,6 +5,9 @@ var typeOfMilk = parseFloat(document.getElementById("typeOfMilk").value);
     var sweetener = parseFloat(document.getElementById("sweeteners").value);
     var marshmallow = parseFloat(document.getElementById("marshmallows").value);
     var grahamCracker = parseFloat(document.getElementById("grahamcrackers").value);
+    var totalSum;
+    var addOnSum;
+    var priceVal;
     function typeOfMilkChange(value) {
         typeOfMilk = parseFloat(value);
         totalAmt()
@@ -46,5 +49,40 @@ var typeOfMilk = parseFloat(document.getElementById("typeOfMilk").value);
             totalSum = typeOfMilk + sizeOfDrink + whippedCream + sweetener + warmOrFrozen + marshmallow + grahamCracker;
             document.getElementById("totalPrice").innerHTML = "$" + totalSum.toFixed(2);
             }
+
+            priceVal = totalSum - sweetener - whippedCream - marshmallow - grahamCracker;
+            addOnSum = totalSum - priceVal;
     }
+
+
+    function sendDataObject() {
+        //  location.href = "/php/checkout.php";
+        let myObj = {
+            name: "Sleeping Bear Latte",
+            image: "/images/Sleeping Bear Latte Transparent.png",
+            price: priceVal,
+            AddOnPrice: addOnSum,
+            totalPrice: totalSum
+    
+          }
+          var myObjString = JSON.stringify(myObj);
+    
+    
+        $.ajax({
+          type: "POST",
+          url: '/php/insertinshoppingtable.php',
+          data: {myObject: myObjString},
+          dataType: "json",
+          async: false,
+          cache: false
+        }).done(function(Response) {
+         // location.href = "/php/checkout.php";
+         console.log(Response);
+        }).fail(function(Response) {
+            console.log(Response);
+          location.href = "/php/checkout.php";
+      
+      });
+    
+        }
     

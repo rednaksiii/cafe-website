@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style-1.css" type="text/css">
-    <link rel="stylesheet" href="coffeecake.css" type="text/css">
+    <link rel="stylesheet" href="/css/coffeecake.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
     <title>The Greatest Coffee Cake</title>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="/javascript/coffeecake.js"></script>
  
   <div class="container-fluid">
@@ -76,7 +77,7 @@
 </div>
 </div>
 <div class="row">
-  <form name="coffeecakeform" method="post" action="insertindatabase.php">
+  <form>
     <fieldset>
       <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3 lbl">
@@ -110,7 +111,7 @@
     </div>
       <div class="row">
       <div class="col-md-6 col-md-offset-3">
-          <select class="form-control" id="warmFrozen" onchange="totalAmt(this.value)">
+          <select class="form-control" id="warmFrozen" onchange="warmOrFrozenChange(this.value)">
             <option></option>
             <option value="4.75">Warm ($4.75)</option>
             <option value= "4.50" >Frozen ($4.50)</option>
@@ -124,16 +125,17 @@
     </div>
     <div class="form-group">
       <div class="container">
-   <div class="pull-left">
-        <button type="reset" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
-        </div>
-        <div class="pull-right">
-        <button type="submit" class="btn btn-success submitBtn" data-inline="true">Order</button>
-      </div>
+   
     </div>
     </div>
     </fieldset>
   </form>
+  <div class="pull-left">
+        <button type="reset" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
+        </div>
+        <div class="pull-right">
+          <button onclick="sendDataObject();" class="btn btn-success submitBtn" data-inline="true">Order</button>
+        </div>
     </div>
     </div>
 </body>

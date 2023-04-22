@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="/css/style-1.css" type="text/css">
-    <link rel="stylesheet" href="sleepingbear.css" type="text/css">
+    <link rel="stylesheet" href="/css/sleepingbear.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sleeping Bear Latte</title>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="/javascript/sleepingbearlatte.js"></script>
   <div class="container-fluid">
     <div class="row">
@@ -204,17 +205,18 @@
       </div>
     </div>
     <div class="form-group">
-      <div class="container">
+      
+    </div>
+    </fieldset>
+  </form>
+  <div class="container">
    <div class="pull-left">
         <button type="reset" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
         </div>
         <div class="pull-right">
-        <button type="submit" class="btn btn-success submitBtn" data-inline="true">Order</button>
+        <button onclick="sendDataObject();" class="btn btn-success submitBtn" data-inline="true">Order</button>
       </div>
     </div>
-    </div>
-    </fieldset>
-  </form>
 </div>
 </div>
 </body>
