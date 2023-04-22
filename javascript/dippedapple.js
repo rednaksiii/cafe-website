@@ -24,7 +24,7 @@ function addToCart(selectedValue,totalPrice,buttonValue) {
     type: "POST",
       url: '/php/insertinshoppingtable.php',
       data: {myObject: myObjString},
-      contentType: "application/json; charset=utf-8",
+      dataType: "json",
       async: false,
       cache: false
     }).done(function(Response) {
