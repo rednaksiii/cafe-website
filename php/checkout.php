@@ -25,16 +25,16 @@ function outputShoppingCart() {
       echo '</td>';
 
       echo '<td>';
-      echo '$'.$row['price'];
+      echo '$'.number_format($row['price'], 2, '.','');
       echo '</td>';
 
       echo '<td>';
-      echo '$'.$row['AddOnPrice'];
+      echo '$'.number_format($row['AddOnPrice'], 2, '.','');
       echo '</td>';
 
       echo '<td>';
       
-      echo '$'. $row['totalPrice'];
+      echo '$'.number_format($row['totalPrice'], 2, '.','');
       echo '</td>';
 
       echo '<td>';
