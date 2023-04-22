@@ -103,7 +103,7 @@
                  </div>
                </div>
                <br>
-               <form action="checkout.php" method="post">
+               <form>
                   <div>
                      <legend>Total</legend>
                      <div class="total-price">$4.00</div>
@@ -198,7 +198,8 @@ function sendDataObject() {
      // location.href = "/php/checkout.php";
      console.log(Response);
     }).fail(function(Response) {
-      location.href = "/php/checkout.php";
+    // location.href = "/php/checkout.php";
+    console.log(Response);
   
   });
 
