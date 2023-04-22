@@ -69,6 +69,37 @@ function totalPrice() {
 	}
 }
 
+function sendDataObject() {
+    //  location.href = "/php/checkout.php";
+    let myObj = {
+        name: "Cinnamon Tea Latte",
+        image: "/images/cinnamon_latte.png",
+        price: subTotal
+        AddOnPrice: 
+        totalPrice: totalPrice
+
+    }
+    var myObjString = JSON.stringify(myObj);
+
+
+
+    $.ajax({
+        type: "POST",
+        url: '/php/insertinshoppingtable.php',
+        data: { myObject: myObjString },
+        dataType: "json",
+        async: false,
+        cache: false
+    }).done(function (Response) {
+        // location.href = "/php/checkout.php";
+        console.log(Response);
+    }).fail(function (Response) {
+        location.href = "/php/checkout.php";
+
+    });
+
+}
+
 //snackbar messages	
 function snackMessage() {
   var x = document.getElementById("snackbar1");
