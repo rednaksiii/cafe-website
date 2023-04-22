@@ -18,13 +18,14 @@ function addToCart() {
     type: "POST",
       url: '/php/insertinshoppingtable.php',
       data: {myObject: myObjString},
-      contentType: "application/json; charset=utf-8",
+      dataType: "json",
       async: false,
       cache: false
     }).done(function(Response) {
       location.href = "/php/checkout.php";
     }).fail(function(Response) {
-      alert("Error thrown!");
+      //alert("Error thrown!");
+      location.href = "/php/checkout.php";
   });
 }
 /*
