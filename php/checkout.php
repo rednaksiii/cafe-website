@@ -7,18 +7,27 @@ function outputShoppingCart() {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     $sql = 'select * from shoppingcart';
+
     $result = $pdo->query($sql);
+    $sum = 0;
     while ($row = $result->fetch()) {
     outputCheckoutTable($row); 
-    }
-    $pdo = null;
-      }
+    $sum += (float)$row['totalPrice'];
+    #$a = array();
+    #array_push($a, $row['totalPrice']);
+    #$sum = array_sum($a);  
+   }
+    outputTotalSum($sum);
+   
+      $pdo = null;
+   }
       catch (PDOException $e) {
          die( $e->getMessage() );
       }
    }
 
    function outputCheckoutTable($row) {
+      echo '<tbody>';
       echo '<tr>';
       echo '<td>';
       echo $row['name'];
@@ -40,8 +49,25 @@ function outputShoppingCart() {
       echo '<td>';
       echo '</td>';
       echo '</tr>';
+      echo '</tbody>';
+      #$sum = 0;
+      #$sum += $row['totalPrice'];
+     # $a = array($row['totalPrice']);
+     # $sum = array_sum($a);
+      #outputTotalSum($sum);
    }
 
+   function outputTotalSum($sum) {
+    echo '<tfoot>';
+     echo '<tr>';
+       echo '<td colspan="3" class="text-right">';
+      echo 'Total:'.'</td>';
+    echo '<td id="cart-total">'.'$'.$sum.'</td>';
+     echo '</tr>';
+  
+    echo '</tfoot>';
+
+   }
 ?>
 
 <!DOCTYPE html>
@@ -105,8 +131,7 @@ function outputShoppingCart() {
                     <th>Subtotal</th>
                     <th>Action</th>
                   </tr>
-                </thead>
-                <tbody id="cart-items">
+</thead>
                   <?php 
                   outputShoppingCart();
                 ?>
@@ -117,14 +142,14 @@ function outputShoppingCart() {
 
 
    
-                </tbody>
+               <!-- </tbody>
                 <tfoot>
                   <tr>
                     <td colspan="3" class="text-right">Total:</td>
                     <td id="cart-total"></td>
                   </tr>
               
-                </tfoot>
+                </tfoot> -->
               </table>
               <div>
                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class=>
