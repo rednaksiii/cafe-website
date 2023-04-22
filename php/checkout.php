@@ -62,7 +62,7 @@ function outputShoppingCart() {
      echo '<tr>';
        echo '<td colspan="3" class="text-right">';
       echo 'Total:'.'</td>';
-    echo '<td id="cart-total">'.'$'.$sum.'</td>';
+    echo '<td id="cart-total">'.'$'.number_format($sum,2, '.', '').'</td>';
      echo '</tr>';
   
     echo '</tfoot>';
@@ -94,11 +94,11 @@ function outputShoppingCart() {
    <div class="container">
       <nav class="navbar navbar-default" role="navigation">
          <ul id="navi" class="nav navbar nav">
-            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="catalogue.html">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="references.html">References</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-       <li class="nav-item"><a href="checkout.html"><i class="fa fa-shopping-cart"></i></a></li>
+            <li class="nav-item active"><a class="nav-link" href="/html/index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/html/catalogue.html">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="/html/references.html">References</a></li>
+            <li class="nav-item"><a class="nav-link" href="/html/about.html">About</a></li>
+       <li class="nav-item"><a href="checkout.php"><i class="fa fa-shopping-cart"></i></a></li>
          </ul>
       </nav>
       <!--
@@ -122,7 +122,7 @@ function outputShoppingCart() {
             <div class="jumbotron">
            
               <h1>Cart</h1>
-              <table class="table table-bordered">
+              <table class="table table-responsive">
                 <thead>
                   <tr>
                     <th>Item</th>

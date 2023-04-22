@@ -39,35 +39,41 @@ var typeOfMilk = parseFloat(document.getElementById("typeOfMilk").value);
             document.getElementById("totalPrice").innerHTML = "$" + totalSum.toFixed(2);
             }
             priceVal = totalSum - whippedCream - typeOfChocolate;
-            addOnPrice = totalSum - price;
-            sendDataObject();
+            addOnSum = totalSum - priceVal;
+          //  sendDataObject();
     }
 
     function sendDataObject() {
-      let myObj = {
+    //  location.href = "/php/checkout.php";
+    let myObj = {
         name: "Hot Chocolate",
         image: "/images/Hot Chocolate Transparent.png",
         price: priceVal,
-        addOnSum: addOnPrice
+        AddOnPrice: addOnSum,
+        totalPrice: totalSum
 
       }
       var myObjString = JSON.stringify(myObj);
 
-      var serialized = myObj.serialized();
-      $.ajax({
-        url: "/php/insertinshoppingtable.php",
-        type: "POST",
-        dataType: "json",
-        data: {myObject: myObjString
-        },
-        success: function(result) {
-            console.log(result)
-        },
-        error: function(log) {
-            // handle error
-            console.log(log);
-        }
-    });
+
+    $.ajax({
+      type: "POST",
+      url: '/php/insertinshoppingtable.php',
+      data: {myObject: myObjString},
+      contentType: "application/json; charset=utf-8",
+      async: false,
+      cache: false
+    }).done(function(Response) {
+      location.href = "/php/checkout.php";
+    }).fail(function(Response) {
+      alert("Error thrown!");
+  
+  });
 
     }
     
+    function snackMessage() {
+      var x = document.getElementById("snackbar1");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
