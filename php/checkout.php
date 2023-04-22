@@ -1,28 +1,49 @@
-<!--<?php
-session_start();
-if(isset($_SESSION["shopping_cart"]))  
-{  
-$item_array_id = array_column($_SESSION["shopping_cart"], "item_id");  
-if(!in_array($_GET["id"], $item_array_id))  
-{  
-     $count = count($_SESSION["shopping_cart"]);  
-     $item_array = array(  
-          'item_id'               =>     $_GET["id"],  
-          'item_name'               =>     $_POST["hidden_name"],  
-          'item_price'          =>     $_POST["hidden_price"],  
-          'item_quantity'          =>     $_POST["quantity"]  
-          'item_total'
-     );  
-     $_SESSION["shopping_cart"][$count] = $item_array;  
+<?php
+require_once('config.php');
+
+function outputShoppingCart() {
+   try {
+    $pdo = new PDO(DBCONNSTRING,DBUSER,DBPASS);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    $sql = 'select * from shoppingcart';
+    $result = $pdo->query($sql);
+    while ($row = $result->fetch()) {
+    outputCheckoutTable($row); 
+    }
+    $pdo = null;
+      }
+      catch (PDOException $e) {
+         die( $e->getMessage() );
+      }
    }
-}  
-else  
-{  
-     echo '<script>alert("Item Already Added")</script>';  
-     echo '<script>window.location="index.php"</script>';  
-}  
+
+   function outputCheckoutTable($row) {
+      echo '<tr>';
+      echo '<td>';
+      echo $row['name'];
+      echo '</td>';
+
+      echo '<td>';
+      echo '$'.$row['price'];
+      echo '</td>';
+
+      echo '<td>';
+      echo '$'.$row['AddOnPrice'];
+      echo '</td>';
+
+      echo '<td>';
+      
+      echo '$'. $row['totalPrice'];
+      echo '</td>';
+
+      echo '<td>';
+      echo '</td>';
+      echo '</tr>';
+   }
+
 ?>
--->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +54,7 @@ else
    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
    <link rel="stylesheet" href="/css/style-1.css">
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script type="text/javascript" src="javascript/baklava.js"></script>
+   <script type="text/javascript" src="/javascript/baklava.js"></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="icon" type="image/x-icon" href="/images/logo2.png"></link>
 </head>
@@ -80,18 +101,17 @@ else
                   <tr>
                     <th>Item</th>
                     <th>Price</th>
-                    <th>Quantity</th>
+                    <th>AddOnPrice</th>
                     <th>Subtotal</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody id="cart-items">
-                 <!-- <td><?php echo $values["item_name"]; ?></td>  
-                               <td><?php echo $values["item_quantity"]; ?></td>  
-                               <td>$ <?php echo $values["item_price"]; ?></td>  
-                               <td>$ <?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>  
-                <td><a href="checkout.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Remove</span></a></td>  
-                  -->  
+                  <?php 
+                  outputShoppingCart();
+                ?>
+
+                
                 <!-- Cart items will be dynamically added here -->
              
 
