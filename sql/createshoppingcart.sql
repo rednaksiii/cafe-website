@@ -42,10 +42,18 @@ CREATE TABLE `shoppingCart` (
 --
 
 INSERT INTO `shoppingCart` (`id`, `name`, `image`, `price`, `AddOnPrice`, `totalPrice`) VALUES
-(1, 'Lavender Honey Tea Latte', 'images/lavenderlatte.png', 4.45, NULL, NULL),
-(2, 'Coconut Macaroons', 'images/cocomac.png', 3.50, NULL, NULL),
-(3, 'Cinnamon Tea Latte', 'images/cinnlatte.png', 4.00, NULL, NULL),
-(4, 'Chocolate Croissant', 'images/chococross.png', 5.25, NULL, NULL);
+(1, 'Lavender Honey Tea Latte', '/images/lavenderlatte.png', 4.45, NULL, NULL),
+(2, 'Coconut Macaroons', '/images/cocomac.png', 3.50, NULL, NULL),
+(3, 'Cinnamon Tea Latte', '/images/cinnlatte.png', 4.00, NULL, NULL),
+(4, 'Chocolate Croissant', '/images/chococross.png', 5.25, NULL, NULL),
+(5, 'Baklava', '/images/baklava.png', 4, NULL, NULL),
+(6, 'Kunafeh', '/images/kunafeh.png', 4, NULL, NULL),
+(7, 'Tea', '/images/transparent-green-tea.png', 0.5, NULL, NULL),
+(8, 'Turkish tea', '/images/turkish-tea.png', 0.5, NULL, NULL);
+
+
+
+
 
 --
 -- Indexes for dumped tables

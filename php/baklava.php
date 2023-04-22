@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Baklava</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="/css/style-1.css">
+   <link rel="icon" type="image/x-icon" href="/images/logo2.png"></link>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+   <script src="/javascript/baklava.js"></script>
+</head>
+<body>
+   <main>
+      <header>
+         <img src= "/images/logo2.png" alt = "logo"/>
+         <h1>Team One Cafe</h1>
+      </header>
+   </main>   
+   <div class="container">
+      <nav class="navbar navbar-default" role="navigation">
+         <ul id="navi" class="nav navbar nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalogue.html">Menu</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+         </ul>
+      </nav>
+      <div class="row">
+         <div class="col-md-3">
+            <div class="panel panel-default">
+               <div class="panel-heading" style="background-color:#362417">
+                  <h3 class="panel-title">Recommendations</h3>
+               </div>
+               <div class="panel-body">
+                  <ul class="list-group">
+                     <li class="list-group-item"><a href="kunafeh.html" style="color: white;">Kunafeh</a></li>
+                     <li class="list-group-item"><a href="turkish-tea.html" style="color: white;">Turkish Tea</a></li>
+                     <li class="list-group-item"><a href="tea.html" style="color: white;">Tea</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-9">
+            <div class="jumbotron">
+               <div class="image-container">
+                <img src="/images/baklava.png" width="300px" alt="Green tea" class="animated-image">
+                <div class="image-text">
+                   <h1>Baklava</h1>
+                </div>
+                </div>
+                <br>
+               <p>
+                Baklava is a layered pastry dessert made of filo pastry, 
+                filled with chopped nuts, and sweetened with syrup or honey. 
+                It was one of the most popular sweet pastries of Ottoman cuisine.
+               </p>
+                      <legend>Size</legend>
+                      
+                        <select id="size-selection" name="size" class="custom-select">
+                           <option value="small">Small ($4.00)</option>
+                           <option value="medium">Medium ($6.00)</option>
+                           <option value="large">Large ($7.00)</option>
+                           <option value="xlarge">X-Large ($10.00)</option>
+                        </select><br><br>
+                     
+               <div class="customizations">
+               <legend>Customizations</legend>
+               <div class="row">
+                <div class="col-md-2">
+                    <img src="/images/pistachio.png" height="50" width="50" alt="Pistachio">
+                     <h5>Pistachio ($1.00)</h5>
+                     <button id="pistachio" type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"
+                              aria-hidden="true"></span> Add
+                     </button>
+                </div>
+                <div class="col-md-2">
+                     <img src="/images/almonds.png" height="50" width="50" alt="Almonds">
+                     <h5>Almonds ($1.00)</h5>
+                     <button id="almonds" type="button" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"
+                              aria-hidden="true"></span> Add
+                     </button>
+                </div>
+                
+               <div class="col-md-2">
+                <img src="/images/wallnut.png" height="50" width="50" alt="Walnut">
+                 <h5>Walnut ($1.00)</h5>
+                 <button id="walnut" type="button" class="btn btn-success">
+                    <span class="glyphicon glyphicon-shopping-cart"
+                          aria-hidden="true"></span> Add
+                 </button>
+               </div>
+               <div class="col-md-2">
+                  <img src="/images/ice-cream.png" height="50" width="50" alt="Ice Cream">
+                   <h5>Ice Cream ($1.00)</h5>
+                   <button id="icecream" type="button" class="btn btn-success">
+                      <span class="glyphicon glyphicon-shopping-cart"
+                           aria-hidden="true"></span> Add
+                   </button>
+                 </div>
+               </div>
+               <br>
+               <form action="checkout.php" method="post">
+                  <div>
+                     <legend>Total</legend>
+                     <div class="total-price">$4.00</div>
+                     <input type="hidden" name="total-price" value="4.00">
+                     <br>
+                     <button class="order-buttons">Add to Order</button>
+                     <button class="order-buttons">Cancel</button>
+                  </div>
+               </form>
+
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+<script>
+// Get references to the size selection and price display elements
+const sizeSelection = document.getElementById('size-selection');
+const priceDisplay = document.querySelector('.total-price');
+
+// Define the prices for each size option and each customization
+const sizePrices = {
+  small: 4,
+  medium: 6,
+  large: 7,
+  xlarge: 10
+};
+
+const customizationPrices = {
+  pistachio: 1,
+  almonds: 1,
+  walnut: 1,
+  icecream: 1
+};
+
+let selectedCustomizations = [];
+
+// Add an event listener to the size selection to update the price
+sizeSelection.addEventListener('change', () => {
+  updateTotalPrice();
+});
+
+// Add event listeners to the customization buttons
+document.querySelectorAll('.customizations button').forEach((button) => {
+  button.addEventListener('click', (event) => {
+    const customizationId = event.currentTarget.id;
+    const index = selectedCustomizations.indexOf(customizationId);
+    if (index === -1) {
+      // The customization has not been added yet, so add it
+      selectedCustomizations.push(customizationId);
+    } else {
+      // The customization has already been added, so remove it
+      selectedCustomizations.splice(index, 1);
+    }
+    updateTotalPrice();
+  });
+});
+
+// Updates the total price based on the currently selected size and customizations
+function updateTotalPrice() {
+  const selectedSize = sizeSelection.value;
+  let totalPrice = sizePrices[selectedSize];
+  selectedCustomizations.forEach((customizationId) => {
+    totalPrice += customizationPrices[customizationId];
+  });
+  priceDisplay.textContent = '$' + totalPrice.toFixed(2);
+  document.querySelector('input[name="total-price"]').value = totalPrice.toFixed(2);
+}
+
+function sendDataObject() {
+    //  location.href = "/php/checkout.php";
+    let myObj = {
+        name: "Hot Chocolate",
+        image: "/images/baklava.png",
+        price: 4,
+        AddOnPrice: totalPrice - 4,
+        totalPrice: totalPrice
+
+      }
+      var myObjString = JSON.stringify(myObj);
+
+
+    $.ajax({
+      type: "POST",
+      url: '/php/insertinshoppingtable.php',
+      data: {myObject: myObjString},
+      dataType: "json",
+      async: false,
+      cache: false
+    }).done(function(Response) {
+     // location.href = "/php/checkout.php";
+     console.log(Response);
+    }).fail(function(Response) {
+      location.href = "/php/checkout.php";
+  
+  });
+
+    }
+    
+    function snackMessage() {
+      var x = document.getElementById("snackbar1");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+
+</script>
+
+
+</body>
+</html>
