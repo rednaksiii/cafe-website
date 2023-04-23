@@ -46,15 +46,9 @@ function outputShoppingCart() {
       echo '$'.number_format($row['totalPrice'], 2, '.','');
       echo '</td>';
 
-      echo '<td>';
-      echo '</td>';
       echo '</tr>';
       echo '</tbody>';
-      #$sum = 0;
-      #$sum += $row['totalPrice'];
-     # $a = array($row['totalPrice']);
-     # $sum = array_sum($a);
-      #outputTotalSum($sum);
+      
    }
 
    function outputTotalSum($sum) {
@@ -129,7 +123,6 @@ function outputShoppingCart() {
                     <th>Price</th>
                     <th>AddOnPrice</th>
                     <th>Subtotal</th>
-                    <th>Action</th>
                   </tr>
 </thead>
                   <?php 

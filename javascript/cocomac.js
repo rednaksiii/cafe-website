@@ -54,8 +54,8 @@ function sendDataObject() {
     let myObj = {
         name: "Chocolate Croissant",
         image: "/images/chococross.png",
-        price: subTotal
-        AddOnPrice: topopt
+        price: subTotal,
+        AddOnPrice: topopt,
         totalPrice: totalPrice
 
     }
