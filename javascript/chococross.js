@@ -55,7 +55,7 @@ function sendDataObject() {
         name: "Chocolate Croissant",
         image: "/images/chococross.png",
         price: topopt
-        AddOnPrice:
+        AddOnPrice: topopt
         totalPrice: totalPrice
 
     }
