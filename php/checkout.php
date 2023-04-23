@@ -46,6 +46,10 @@ function outputShoppingCart() {
       echo '$'.number_format($row['totalPrice'], 2, '.','');
       echo '</td>';
 
+      echo '<td>';
+      echo '<button class="btn btn-danger btn-sm remove-item" data-id="' . $row['id'] . '">Remove</button>';
+      echo '</td>';
+   
       echo '</tr>';
       echo '</tbody>';
       
@@ -74,7 +78,6 @@ function outputShoppingCart() {
    <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.min.css" type="text/css">
    <link rel="stylesheet" href="/css/style-1.css">
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script type="text/javascript" src="/javascript/baklava.js"></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <link rel="icon" type="image/x-icon" href="/images/logo2.png"></link>
 </head>
@@ -157,5 +160,23 @@ function outputShoppingCart() {
          </div>
       </div>
    </div>
+<script>
+   $(document).ready(function() {
+   $('.remove-item').on('click', function() {
+      var itemId = $(this).data('id');
+
+      $.ajax({
+         type: 'POST',
+         url: 'remove-item.php',
+         data: {id: itemId},
+         success: function(data) {
+            // Reload the page to update the shopping cart table
+            location.reload();
+         }
+      });
+   });
+});
+</script>
+
 </body>
 </html>
