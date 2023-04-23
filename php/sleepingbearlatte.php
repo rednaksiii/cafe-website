@@ -24,7 +24,7 @@
     <div class="container">
       <nav id="navbar"class="navbar navbar default" role="navigation">
           <ul id="navi" class="nav navbar nav">
-              <li><a href="index.html">Home</a></li>
+              <li><a href="/index.php">Home</a></li>
               <li><a href="/html/catalogue.html">Menu</a></li>
               <li><a href="/html/references.html">References</a></li>
               <li><a href="/html/about.html">About</a></li>
