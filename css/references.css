@@ -27,6 +27,10 @@ li.active {
         padding-bottom: 0;
         margin-bottom: 0;
     }
+.topnav {
+	
+	display: none;
+}
     
     ul {
         list-style-type: none;
