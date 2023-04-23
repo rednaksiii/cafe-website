@@ -1,4 +1,3 @@
-//main webpage
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://bootswatch.com/3/superhero/bootstrap.css"/>
-  <link rel="stylesheet" href="css/index_mobile.css" media="screen and (max-width:480px)" />
-  <link rel="stylesheet" href="css/index_desktop.css" media="screen and (min-width:481px)" />
+  <link rel="stylesheet" href="/css/index_mobile.css" media="screen and (max-width:480px)" />
+  <link rel="stylesheet" href="/css/index_desktop.css" media="screen and (min-width:481px)" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,7 +16,7 @@
 
 <main>
 <header>
-	<img src= "images/logo2.png" alt = "logo"/>
+	<img src= "/images/logo2.png" alt = "logo"/>
 		<h1>Team One Cafe</h1>
 </header>
 </main>
@@ -57,7 +56,7 @@
       <div class="item active">
 	  <a href="lavender_honey_latte.html">
       <div class="carousel-item">
-        <img id="featitem" src="images/lavenderlatte.png" alt="Lavender Latte">
+        <img id="featitem" src="/images/lavenderlatte.png" alt="Lavender Latte">
       </div>
 		</a>
 		<h3>Lavender Latte</h3>
@@ -67,7 +66,7 @@
    
 	  <a href="hotchocolate.html">
       <div class="carousel-item">
-		<img id= "featitem" src="images/Hot Chocolate Transparent.png" alt="Hot Chocolate">
+		<img id= "featitem" src="/images/Hot Chocolate Transparent.png" alt="Hot Chocolate">
     </div>
 	  </a>
 	  <h3>Hot Chocolate</h3>
@@ -77,7 +76,7 @@
         <div class="d-flex justify-content-center">
 	  <a href="Mega recess.html">
       <div class="carousel-item">
-        <img id="featitem" src="images/reesespieimage.png" class="center-block" alt="Reese's pie">
+        <img id="featitem" src="/images/reesespieimage.png" class="center-block" alt="Reese's pie">
 	 </div>
       </a>
 	  <h3>Reese's Pie</h3>
@@ -87,7 +86,7 @@
 	  <div class="item">
 	  <a href= "kunafeh.html">
       <div class="carousel-item">
-        <img id="featitem" src="images/kunafeh.png" alt="Kunafeh">
+        <img id="featitem" src="/images/kunafeh.png" alt="Kunafeh">
         </div>
 	  </a>
 	  <h3>Kunafeh</h3>
