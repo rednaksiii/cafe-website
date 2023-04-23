@@ -25,10 +25,10 @@
       <nav id="navbar"class="navbar navbar default" role="navigation">
           <ul id="navi" class="nav navbar nav">
               <li><a href="index.html">Home</a></li>
-              <li><a href="catalogue.html">Menu</a></li>
-              <li><a href="references.html">References</a></li>
-              <li><a href="about.html">About</a></li>
-              <li class="nav-item"><a href="checkout.html"><i class="fa fa-shopping-cart"></i></a></li>
+              <li><a href="/html/catalogue.html">Menu</a></li>
+              <li><a href="/html/references.html">References</a></li>
+              <li><a href="/html/about.html">About</a></li>
+              <li class="nav-item"><a href="/php/checkout.php"><i class="fa fa-shopping-cart"></i></a></li>
           </ul>
   </nav>
    
@@ -211,7 +211,7 @@
   </form>
   <div class="container">
    <div class="pull-left">
-        <button type="reset" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
+        <button type="reset" onclick="location.reload();" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
         </div>
         <div class="pull-right">
         <button onclick="sendDataObject();" class="btn btn-success submitBtn" data-inline="true">Order</button>

@@ -26,12 +26,12 @@
     </div>
     <div class="container">
       <nav id="navbar"class="navbar navbar default" role="navigation">
-          <ul id="navi" class="nav navbar nav">
+      <ul id="navi" class="nav navbar nav">
               <li><a href="index.html">Home</a></li>
-              <li><a href="catalogue.html">Menu</a></li>
-              <li><a href="references.html">References</a></li>
-              <li><a href="about.html">About</a></li>
-              <li class="nav-item"><a href="checkout.html"><i class="fa fa-shopping-cart"></i></a></li>
+              <li><a href="/html/catalogue.html">Menu</a></li>
+              <li><a href="/html/references.html">References</a></li>
+              <li><a href="/html/about.html">About</a></li>
+              <li class="nav-item"><a href="/php/checkout.php"><i class="fa fa-shopping-cart"></i></a></li>
           </ul>
   </nav>
  <div class="row">
