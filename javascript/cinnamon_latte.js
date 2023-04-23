@@ -98,9 +98,8 @@ function sendDataObject() {
        location.href = "/php/checkout.php";
       console.log(Response);
     });
-
-}
-
+    location.href = "/php/checkout.php";
+  }
 //snackbar messages	
 function snackMessage() {
   var x = document.getElementById("snackbar1");
