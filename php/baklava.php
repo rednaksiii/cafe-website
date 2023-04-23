@@ -103,13 +103,13 @@
                  </div>
                </div>
                <br>
-               <form action="checkout.php" method="post">
+               <form>
                   <div>
                      <legend>Total</legend>
                      <div class="total-price">$4.00</div>
                      <input type="hidden" name="total-price" value="4.00">
                      <br>
-                     <button class="order-buttons">Add to Order</button>
+                     <button id="add_to_order" type="submit" class="order-buttons" >Add to Order</button>
                      <button class="order-buttons">Cancel</button>
                   </div>
                </form>
@@ -142,6 +142,9 @@ const customizationPrices = {
 
 let selectedCustomizations = [];
 
+// Declare totalPrice globally
+let totalPrice;
+
 // Add an event listener to the size selection to update the price
 sizeSelection.addEventListener('change', () => {
   updateTotalPrice();
@@ -166,7 +169,7 @@ document.querySelectorAll('.customizations button').forEach((button) => {
 // Updates the total price based on the currently selected size and customizations
 function updateTotalPrice() {
   const selectedSize = sizeSelection.value;
-  let totalPrice = sizePrices[selectedSize];
+  totalPrice = sizePrices[selectedSize];
   selectedCustomizations.forEach((customizationId) => {
     totalPrice += customizationPrices[customizationId];
   });
@@ -177,7 +180,7 @@ function updateTotalPrice() {
 function sendDataObject() {
     //  location.href = "/php/checkout.php";
     let myObj = {
-        name: "Hot Chocolate",
+        name: "Baklava",
         image: "/images/baklava.png",
         price: 4,
         AddOnPrice: totalPrice - 4,
