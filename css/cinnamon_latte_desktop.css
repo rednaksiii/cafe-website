@@ -1,5 +1,5 @@
 /* Amber Awadi
-Lavender Honey Tea Latte CSS Page Mobile Version */
+Chocolate Croissant Desktop CSS Page*/
 
 header
 {
@@ -16,51 +16,17 @@ header
 }
 
 #navbar {
-	display: none;
 	background-color: #F1DABF;
-	border: 4mm ridge rgba(54, 36, 23, 1);
 	padding: 2px;
+	padding-bottom: 0;
+
 	
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #04AA6D!important;
-  position: relative;
-}
-
-.topnav #myLinks {
-  display: none;
-  background-color: #A9927D!important;
-  font-family: Georgia, Cambria, "Times New Roman", serif;
-  
-}
-
-.topnav a {
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  display: block;
-}
-
-.topnav a.icon {
-  background: black;
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.topnav a:hover {
-  background-color: #362417!important;
-  color: black;
-}
-
-.active {
-  background-color: #362417;
-  color: white !important;
-  font-family: Georgia, Cambria, "Times New Roman", serif;
+#navi {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	color: #362417!important;
 }
 
 
@@ -81,6 +47,7 @@ li a{
 	display: block;
 	text-align: center;
 	padding: 12px 14px;
+	color: #362417;
 }
 
 li a:hover {
@@ -89,12 +56,15 @@ li a:hover {
 
 .list-group {
 	float: left;
-	color: #362417;
 }
 
+.topnav {
+	
+	display: none;
+}
 
 a:link {
-	color: #362417;
+	color: #362417 !important;
 	font-size: 16px;
 }
 
@@ -105,6 +75,7 @@ a:visited {
 .panel-heading {
 	background-color: #362417 !important;
 	color: white;
+	border: 4mm ridge rgba(54, 36, 23, 1);
 }
 
 #rec {
@@ -141,7 +112,7 @@ a:visited {
 }
 
 #descrip {
-	float: right;
+	float: left;
 	font-size: 12pt;
 }
 
@@ -186,7 +157,9 @@ a:visited {
 
 #order:hover {
 	background-color: #C82E2E;
-	box-shadow: 3px 2px 22px 1px rgba(0,0,0,0.24);
+	cursor: pointer;
+	transition: 0.5s;
+	
 	
 }
 
@@ -203,6 +176,7 @@ a:visited {
 #clear:hover {
 	
 	background-color: #2196F3;
+	transition: 0.5s;
 }
 
 #snackbar1, #snackbar2 {
