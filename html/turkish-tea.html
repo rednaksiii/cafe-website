@@ -92,9 +92,9 @@
                   <legend>Total</legend>
                   <div class="total-price">$0.50</div>
                   <br>
-                  <button class="order-buttons">Add to Order</button>
-                  <button class="order-buttons">Cancel</button>
                </div>
+               <button id="add_to_order" type="submit" class="order-buttons" onclick="sendDataObject();" >Add to Order</button>
+               <button class="order-buttons">Cancel</button>
             </div>
          </div>
       </div>
@@ -120,6 +120,9 @@
       };
       
       let selectedCustomizations = [];
+
+      // Declare totalPrice globally
+      let totalPrice;
       
       // Add an event listener to the size selection to update the price
       sizeSelection.addEventListener('change', () => {
@@ -141,16 +144,53 @@
           updateTotalPrice();
         });
       });
-      
-      // Updates the total price based on the currently selected size and customizations
-      function updateTotalPrice() {
-        const selectedSize = sizeSelection.value;
-        let totalPrice = sizePrices[selectedSize];
-        selectedCustomizations.forEach((customizationId) => {
-          totalPrice += customizationPrices[customizationId];
-        });
-        priceDisplay.textContent = '$' + totalPrice.toFixed(2);
-      }  
+// Updates the total price based on the currently selected size and customizations
+function updateTotalPrice() {
+  const selectedSize = sizeSelection.value;
+  totalPrice = sizePrices[selectedSize];
+  selectedCustomizations.forEach((customizationId) => {
+    totalPrice += customizationPrices[customizationId];
+  });
+  priceDisplay.textContent = '$' + totalPrice.toFixed(2);
+  document.querySelector('input[name="total-price"]').value = totalPrice.toFixed(2);
+} 
+
+function sendDataObject() {
+    //  location.href = "/php/checkout.php";
+    let myObj = {
+        name: "Turkish Tea",
+        image: "/images/turkish-tea.png",
+        price: 0.5,
+        AddOnPrice: totalPrice - 0.5,
+        totalPrice: totalPrice
+
+      }
+      var myObjString = JSON.stringify(myObj);
+
+
+    $.ajax({
+      type: "POST",
+      url: '/php/insertinshoppingtable.php',
+      data: {myObject: myObjString},
+      dataType: "json",
+      async: false,
+      cache: false
+    }).done(function(Response) {
+     // location.href = "/php/checkout.php";
+     console.log(Response);
+    }).fail(function(Response) {
+    location.href = "/php/checkout.php";
+    console.log(Response);
+  
+  });
+
+    }
+    
+    function snackMessage() {
+      var x = document.getElementById("snackbar1");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }     
 
 </script>   
 
