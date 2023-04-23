@@ -1,6 +1,9 @@
 li.active {
     background-color:#a9927d;
     }
+    table a:not(.btn) {
+        color: black;
+    }
     
     header
     {
@@ -56,7 +59,7 @@ li.active {
     }
     
     a:link {
-        color: #362417;
+        color: black;
         font-size: 16px;
     }
     

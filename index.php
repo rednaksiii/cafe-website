@@ -64,7 +64,7 @@
 
       <div class="item">
    
-	  <a href="/php/hotchocolate.php">
+	  <a href="/html/hotchocolate.html">
       <div class="carousel-item">
 		<img id= "featitem" src="/images/Hot Chocolate Transparent.png" alt="Hot Chocolate">
     </div>
@@ -74,7 +74,7 @@
     
       <div class="item">
         <div class="d-flex justify-content-center">
-	  <a href="Mega recess.html">
+	  <a href="/html/Mega recess.html">
       <div class="carousel-item">
         <img id="featitem" src="/images/reesespieimage.png" class="center-block" alt="Reese's pie">
 	 </div>

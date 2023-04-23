@@ -91,30 +91,13 @@ function outputShoppingCart() {
    <div class="container">
       <nav class="navbar navbar-default" role="navigation">
          <ul id="navi" class="nav navbar nav">
-            <li class="nav-item active"><a class="nav-link" href="/html/index.html">Home</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/index.php">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="/html/catalogue.html">Menu</a></li>
             <li class="nav-item"><a class="nav-link" href="/html/references.html">References</a></li>
             <li class="nav-item"><a class="nav-link" href="/html/about.html">About</a></li>
        <li class="nav-item"><a href="checkout.php"><i class="fa fa-shopping-cart"></i></a></li>
          </ul>
       </nav>
-      <!--
-      <div class="row">
-         <div class="col-md-3">
-            <div class="panel panel-default">
-               <div class="panel-heading" style="background-color:#362417">
-                  <h3 class="panel-title">Recommendations</h3>
-               </div>
-               <div class="panel-body">
-                  <ul class="list-group">
-                     <li class="list-group-item"><a href="tea.html" style="color: white;">Tea</a></li>
-                     <li class="list-group-item"><a href="turkish-tea.html" style="color: white;">Turkish Tea</a></li>
-                     <li class="list-group-item"><a href="baklava.html" style="color: white;">Baklava</a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-         -->
          <div class="col-md-12">
             <div class="jumbotron">
            
