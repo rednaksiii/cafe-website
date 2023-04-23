@@ -25,10 +25,10 @@
 <div class="container">
   <nav id="navbar"class="navbar navbar default" role="navigation">
 				<ul id="navi" class="nav navbar nav">
-					<li class="nav-item active"><a class="nav-link" href="php/index.php">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="html/catalogue.html">Menu</a></li>
-					<li class="nav-item"><a class="nav-link" href="html/references.html">References</a></li>
-					<li class="nav-item"><a class="nav-link" href="html/about.html">About</a></li>
+					<li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/catalogue.html">Menu</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/references.html">References</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/about.html">About</a></li>
           <li class="nav-item"><a href="php/checkout.php"><i class="fa fa-shopping-cart"></i></a></li>
 				</ul>
 		</nav>
@@ -54,7 +54,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="item active">
-	  <a href="lavender_honey_latte.html">
+	  <a href="/html/lavender_honey_latte.html">
       <div class="carousel-item">
         <img id="featitem" src="/images/lavenderlatte.png" alt="Lavender Latte">
       </div>
@@ -64,7 +64,7 @@
 
       <div class="item">
    
-	  <a href="hotchocolate.html">
+	  <a href="/php/hotchocolate.php">
       <div class="carousel-item">
 		<img id= "featitem" src="/images/Hot Chocolate Transparent.png" alt="Hot Chocolate">
     </div>
@@ -84,7 +84,7 @@
       </div>
 	  
 	  <div class="item">
-	  <a href= "kunafeh.html">
+	  <a href= "/html/kunafeh.html">
       <div class="carousel-item">
         <img id="featitem" src="/images/kunafeh.png" alt="Kunafeh">
         </div>
