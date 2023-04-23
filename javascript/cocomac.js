@@ -1,5 +1,5 @@
 //Amber Awadi
-//JavaScript page for chocolate croissant
+//JavaScript page for coconut macaroons
 
 var navItems = document.querySelectorAll(".nav-item");
 for (var i = 0; i < navItems.length; i++) {
@@ -54,7 +54,7 @@ function sendDataObject() {
     let myObj = {
         name: "Chocolate Croissant",
         image: "/images/chococross.png",
-        price: topopt
+        price: subTotal
         AddOnPrice: topopt
         totalPrice: totalPrice
 

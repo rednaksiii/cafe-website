@@ -69,6 +69,38 @@ function totalPrice() {
 		document.getElementById("totalPrice").innerHTML = "$" + subTotal.toFixed(2);
 	}
 }
+
+function sendDataObject() {
+    //  location.href = "/php/checkout.php";
+    let myObj = {
+        name: "Lavender Honey Tea Latte",
+        image: "/images/lavender_honey.png",
+        price: size
+        AddOnPrice: milkopt + foamopt + topopt
+        totalPrice: totalPrice
+
+    }
+    var myObjString = JSON.stringify(myObj);
+
+
+
+    $.ajax({
+        type: "POST",
+        url: '/php/insertinshoppingtable.php',
+        data: { myObject: myObjString },
+        dataType: "json",
+        async: false,
+        cache: false
+    }).done(function (Response) {
+        // location.href = "/php/checkout.php";
+        console.log(Response);
+    }).fail(function (Response) {
+        location.href = "/php/checkout.php";
+
+    });
+
+}
+
 //snackbar messages	
 function snackMessage() {
   var x = document.getElementById("snackbar1");

@@ -201,7 +201,8 @@ function sendDataObject() {
      // location.href = "/php/checkout.php";
      console.log(Response);
     }).fail(function(Response) {
-      location.href = "/php/checkout.php";
+    // location.href = "/php/checkout.php";
+    console.log(Response);
   
   });
 

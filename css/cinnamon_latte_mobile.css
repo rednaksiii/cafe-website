@@ -1,5 +1,5 @@
 /* Amber Awadi
-Lavender Honey Tea Latte CSS Page Mobile Version */
+Cinnamon Latte CSS Page Mobile Version */
 
 header
 {
@@ -23,12 +23,44 @@ header
 	
 }
 
-#mobilemenu {
-	
-	font-family: Georgia, Cambria, "Times New Roman", serif;
-	color: black;
-	display: inline-block;
-	width: 90%;
+.topnav {
+  overflow: hidden;
+  background-color: #04AA6D!important;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+  background-color: #A9927D!important;
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+  
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #362417!important;
+  color: black;
+}
+
+.active {
+  background-color: #362417;
+  color: white !important;
+  font-family: Georgia, Cambria, "Times New Roman", serif;
 }
 
 
@@ -152,6 +184,12 @@ a:visited {
 	margin: 4px 2px;
 }
 
+#order:hover {
+	background-color: #C82E2E;
+	box-shadow: 3px 2px 22px 1px rgba(0,0,0,0.24);
+	
+}
+
 #clear {
 	color: black;
 	background-color: #C82E2E;
@@ -162,3 +200,49 @@ a:visited {
 	margin: 4px 2px;
 }
 
+#clear:hover {
+	
+	background-color: #2196F3;
+}
+
+#snackbar1, #snackbar2 {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar1.show , #snackbar2.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

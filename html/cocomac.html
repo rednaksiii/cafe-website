@@ -10,6 +10,7 @@
    <link rel="icon" type="image/x-icon" href="/images/logo2.png"></link>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <script type="text/javascript" src="/javascript/cocomac.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
 <main>
@@ -86,12 +87,13 @@
 									<option value="0.00">No Extras/Toppings</option>
 								</select>
 							</p>
-							<br/><input id= "order" type="submit" value="Add to Order" onclick="snackMessage();"/>
-							<input id="clear" type="reset" value="Clear" onclick="snackMessage2();" />
+							<br/>
 						<div id="snackbar1">Added to order!</div>
 						<div id="snackbar2">Cleared Choices</div>
 						</fieldset>
 						</form>
+						<input id= "order" type="submit" value="Add to Order" onclick="sendDataObject();"/>
+						<input id="clear" type="reset" value="Clear" onclick="snackMessage2();" />
 	</div>
 	</div>
 </div>
