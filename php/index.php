@@ -17,7 +17,7 @@
 
 <main>
 <header>
-	<img src= "images/logo2.png" alt = "logo"/>
+	<img src= "/images/logo2.png" alt = "logo"/>
 		<h1>Team One Cafe</h1>
 </header>
 </main>
@@ -57,7 +57,7 @@
       <div class="item active">
 	  <a href="lavender_honey_latte.html">
       <div class="carousel-item">
-        <img id="featitem" src="images/lavenderlatte.png" alt="Lavender Latte">
+        <img id="featitem" src="/images/lavenderlatte.png" alt="Lavender Latte">
       </div>
 		</a>
 		<h3>Lavender Latte</h3>
@@ -67,7 +67,7 @@
    
 	  <a href="hotchocolate.html">
       <div class="carousel-item">
-		<img id= "featitem" src="images/Hot Chocolate Transparent.png" alt="Hot Chocolate">
+		<img id= "featitem" src="/images/Hot Chocolate Transparent.png" alt="Hot Chocolate">
     </div>
 	  </a>
 	  <h3>Hot Chocolate</h3>
@@ -77,7 +77,7 @@
         <div class="d-flex justify-content-center">
 	  <a href="Mega recess.html">
       <div class="carousel-item">
-        <img id="featitem" src="images/reesespieimage.png" class="center-block" alt="Reese's pie">
+        <img id="featitem" src="/images/reesespieimage.png" class="center-block" alt="Reese's pie">
 	 </div>
       </a>
 	  <h3>Reese's Pie</h3>
@@ -87,7 +87,7 @@
 	  <div class="item">
 	  <a href= "kunafeh.html">
       <div class="carousel-item">
-        <img id="featitem" src="images/kunafeh.png" alt="Kunafeh">
+        <img id="featitem" src="/images/kunafeh.png" alt="Kunafeh">
         </div>
 	  </a>
 	  <h3>Kunafeh</h3>
