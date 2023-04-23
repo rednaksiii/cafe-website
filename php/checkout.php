@@ -126,6 +126,7 @@ function outputShoppingCart() {
                     <th>Price</th>
                     <th>AddOnPrice</th>
                     <th>Subtotal</th>
+                    <th>Cancel</th>
                   </tr>
 </thead>
                   <?php 
