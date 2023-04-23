@@ -21,6 +21,7 @@ try {
       echo 'Data not inserted';
   }
   #  echo "Connected successfully";
+  $pdo = null;
     }
   } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();

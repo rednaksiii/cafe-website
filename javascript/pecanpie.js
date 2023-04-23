@@ -37,21 +37,19 @@ function whippedCreamChange(value) {
           var myObjString = JSON.stringify(myObj);
     
     
-        $.ajax({
-          type: "POST",
-          url: '/php/insertinshoppingtable.php',
-          data: {myObject: myObjString},
-          dataType: "json",
-          async: false,
-          cache: false
-        }).done(function(Response) {
-         // location.href = "/php/checkout.php";
-         console.log(Response);
-        }).fail(function(Response) {
-            console.log(Response);
-          location.href = "/php/checkout.php";
-      
-      });
+          $(document).ready(function() {
+
+            $.ajax({
+              type: "POST",
+              url: '/php/insertinshoppingtable.php',
+              data: {myObject: myObjString},
+              success: function(data) {
+                location.href="/php/checkout.php";
+              console.log(data);
+             }
+            });
+    
+          });
     
         }
     

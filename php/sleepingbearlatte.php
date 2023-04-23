@@ -24,11 +24,11 @@
     <div class="container">
       <nav id="navbar"class="navbar navbar default" role="navigation">
           <ul id="navi" class="nav navbar nav">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="catalogue.html">Menu</a></li>
-              <li><a href="references.html">References</a></li>
-              <li><a href="about.html">About</a></li>
-              <li class="nav-item"><a href="checkout.html"><i class="fa fa-shopping-cart"></i></a></li>
+              <li><a href="/index.php">Home</a></li>
+              <li><a href="/html/catalogue.html">Menu</a></li>
+              <li><a href="/html/references.html">References</a></li>
+              <li><a href="/html/about.html">About</a></li>
+              <li class="nav-item"><a href="/php/checkout.php"><i class="fa fa-shopping-cart"></i></a></li>
           </ul>
   </nav>
    
@@ -159,10 +159,10 @@
               <div class="col-md-6 col-md-offset-3">
                   <select class="form-control" id="sweeteners" onchange="sweetenerChange(this.value)">
                     <option></option>
-                    <option value="0.10">Sugar(0.10)</option>
-                    <option value= "0.10">Classic Syrup (0.10)</option>
-                    <option value="0.15">Splenda(0.10)</option>
-                    <option value="0.20">Honey (0.10)</option>
+                    <option value="0.10">Sugar($0.10)</option>
+                    <option value= "0.10">Classic Syrup ($0.10)</option>
+                    <option value="0.15">Splenda($0.10)</option>
+                    <option value="0.20">Honey ($0.10)</option>
                   </select>
                   <br>
                 </div>
@@ -176,8 +176,8 @@
                   <div class="col-md-6 col-md-offset-3">
                       <select class="form-control" id="marshmallows" onchange="marshmallowChange(this.value)">
                         <option></option>
-                        <option value="0.10">Marshmallows(0.10)</option>
-                        <option value="0.00">No Marshmallows (0.00)</option>
+                        <option value="0.10">Marshmallows($0.10)</option>
+                        <option value="0.00">No Marshmallows ($0.00)</option>
                       </select>
                       <br>
                     </div>
@@ -192,9 +192,9 @@
                   <div class="col-md-6 col-md-offset-3">
                       <select class="form-control" id="grahamcrackers" onchange="grahamCrackerChange(this.value)">
                         <option></option>
-                        <option value="0.15">Graham Cracker Crumble (0.15)</option>
-                        <option value="0.10"> Cookie Crumble (0.10)</option>
-                        <option value="0.25">Both (0.25)</option>
+                        <option value="0.15">Graham Cracker Crumble ($0.15)</option>
+                        <option value="0.10"> Cookie Crumble ($0.10)</option>
+                        <option value="0.25">Both ($0.25)</option>
                       </select>
                       <br>
                       <div id="totalPrice">
@@ -211,7 +211,7 @@
   </form>
   <div class="container">
    <div class="pull-left">
-        <button type="reset" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
+        <button type="reset" onclick="location.reload();" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
         </div>
         <div class="pull-right">
         <button onclick="sendDataObject();" class="btn btn-success submitBtn" data-inline="true">Order</button>

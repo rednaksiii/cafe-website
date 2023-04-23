@@ -39,21 +39,20 @@
       var myObjString = JSON.stringify(myObj);
 
 
-  
-      $.ajax({
-        type: "POST",
-        url: '/php/insertinshoppingtable.php',
-        data: {myObject: myObjString},
-        dataType: "json",
-        async: false,
-        cache: false
-      }).done(function(Response) {
-       // location.href = "/php/checkout.php";
-       console.log(Response);
-      }).fail(function(Response) {
-        location.href = "/php/checkout.php";
-    
-    });
+      $(document).ready(function() {
+
+        $.ajax({
+          type: "POST",
+          url: '/php/insertinshoppingtable.php',
+          data: {myObject: myObjString},
+          success: function(data) {
+            // Reload the page to update the shopping cart table
+            location.href="/php/checkout.php";
+          console.log(data);
+         }
+        });
+
+      });
 
     }
     
