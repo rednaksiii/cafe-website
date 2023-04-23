@@ -159,10 +159,10 @@
               <div class="col-md-6 col-md-offset-3">
                   <select class="form-control" id="sweeteners" onchange="sweetenerChange(this.value)">
                     <option></option>
-                    <option value="0.10">Sugar(0.10)</option>
-                    <option value= "0.10">Classic Syrup (0.10)</option>
-                    <option value="0.15">Splenda(0.10)</option>
-                    <option value="0.20">Honey (0.10)</option>
+                    <option value="0.10">Sugar($0.10)</option>
+                    <option value= "0.10">Classic Syrup ($0.10)</option>
+                    <option value="0.15">Splenda($0.10)</option>
+                    <option value="0.20">Honey ($0.10)</option>
                   </select>
                   <br>
                 </div>
@@ -176,8 +176,8 @@
                   <div class="col-md-6 col-md-offset-3">
                       <select class="form-control" id="marshmallows" onchange="marshmallowChange(this.value)">
                         <option></option>
-                        <option value="0.10">Marshmallows(0.10)</option>
-                        <option value="0.00">No Marshmallows (0.00)</option>
+                        <option value="0.10">Marshmallows($0.10)</option>
+                        <option value="0.00">No Marshmallows ($0.00)</option>
                       </select>
                       <br>
                     </div>
@@ -192,9 +192,9 @@
                   <div class="col-md-6 col-md-offset-3">
                       <select class="form-control" id="grahamcrackers" onchange="grahamCrackerChange(this.value)">
                         <option></option>
-                        <option value="0.15">Graham Cracker Crumble (0.15)</option>
-                        <option value="0.10"> Cookie Crumble (0.10)</option>
-                        <option value="0.25">Both (0.25)</option>
+                        <option value="0.15">Graham Cracker Crumble ($0.15)</option>
+                        <option value="0.10"> Cookie Crumble ($0.10)</option>
+                        <option value="0.25">Both ($0.25)</option>
                       </select>
                       <br>
                       <div id="totalPrice">

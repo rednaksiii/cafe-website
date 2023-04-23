@@ -173,6 +173,7 @@ function outputShoppingCart() {
          success: function(data) {
             // Reload the page to update the shopping cart table
             location.reload();
+          console.log(data);
          }
       });
    });

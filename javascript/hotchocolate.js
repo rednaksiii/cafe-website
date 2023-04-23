@@ -55,21 +55,21 @@ var typeOfMilk = parseFloat(document.getElementById("typeOfMilk").value);
       }
       var myObjString = JSON.stringify(myObj);
 
+      $(document).ready(function() {
 
-    $.ajax({
-      type: "POST",
-      url: '/php/insertinshoppingtable.php',
-      data: {myObject: myObjString},
-      dataType: "json",
-      async: false,
-      cache: false
-    }).done(function(Response) {
-     // location.href = "/php/checkout.php";
-     console.log(Response);
-    }).fail(function(Response) {
-      location.href = "/php/checkout.php";
-  
-  });
+        $.ajax({
+          type: "POST",
+          url: '/php/insertinshoppingtable.php',
+          data: {myObject: myObjString},
+          success: function(data) {
+            location.href="/php/checkout.php";
+          console.log(data);
+         }
+        });
+
+      });
+
+
 
     }
     

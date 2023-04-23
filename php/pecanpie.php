@@ -126,7 +126,7 @@
   </form>
   <div class="container">
    <div class="pull-left">
-        <button type="reset" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
+        <button type="reset" onclick="location.reload();" class="btn btn-danger cancelBtn" data-inline="true">Cancel</button>
         </div>
         <div class="pull-right">
         <button onclick="sendDataObject();" class="btn btn-success submitBtn" data-inline="true">Order</button>
