@@ -62,21 +62,20 @@ function sendDataObject() {
     var myObjString = JSON.stringify(myObj);
 
 
+$(document).ready(function() {
 
-    $.ajax({
-        type: "POST",
-        url: '/php/insertinshoppingtable.php',
-        data: { myObject: myObjString },
-        dataType: "json",
-        async: false,
-        cache: false
-    }).done(function (Response) {
-        // location.href = "/php/checkout.php";
-        console.log(Response);
-    }).fail(function (Response) {
-        location.href = "/php/checkout.php";
+        $.ajax({
+          type: "POST",
+          url: '/php/insertinshoppingtable.php',
+          data: {myObject: myObjString},
+          success: function(data) {
+            location.href="/php/checkout.php";
+          console.log(data);
+         }
+        });
 
-    });
+      });
+   
 
 }
 
@@ -91,4 +90,5 @@ function snackMessage2() {
   var y = document.getElementById("snackbar2");
   y.className = "show";
   setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
+  location.reload();
 }
