@@ -111,4 +111,5 @@ function snackMessage2() {
   var y = document.getElementById("snackbar2");
   y.className = "show";
   setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
+  location.reload();
 }
