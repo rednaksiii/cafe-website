@@ -19,14 +19,14 @@ The project consists of multiple folders, each serving a distinct purpose:
 
 ## 🍰 Key Features  
 - 🍽️ **Dynamic Menu** – The website includes multiple product pages:  
-  - 🧀 [Kunafeh](kunafeh.html)  
-  - 🍯 [Lavender Honey Latte](lavender_honey_latte.html)  
-  - 🍫 [Reese’s Pie](Mega recess.html)  
-  - 🥧 [Pecan Pie](pecanpie.html)  
-  - 🥤 [Protein Shakes](Protein Shakes.html)  
-  - 💤 [Sleeping Bear Latte](sleepingbearlatte.html)  
-  - 🍵 [Tea](tea.html)  
-  - 🇹🇷 [Turkish Tea](turkish-tea.html)  
+  - 🧀 Kunafeh
+  - 🍯 Lavender Honey Latte
+  - 🍫 Reese’s Pie
+  - 🥧 Pecan Pie
+  - 🥤 Protein Shakes
+  - 💤 Sleeping Bear Latte
+  - 🍵 Tea
+  - ☕️ Turkish Tea 
 
 - 🎨 **Customization Options** – Users can personalize their orders with **size selections, add-ons, and special requests**.  
 - 🛒 **Shopping Cart Integration** – Users can **add items to their cart** before proceeding to checkout.  
@@ -68,15 +68,8 @@ The project consists of multiple folders, each serving a distinct purpose:
 👩‍💻 **Clara McGrew**  
 👨‍💻 **Justin Bowker**  
 👨‍💻 **Iskandar Kholmatov**  
-👨‍👩‍👦‍👦 **Team One Members**  
-
----
-
-## 📚 References  
-🔍 See the [📖 References Page](references.html) for detailed citations of **images and resources used**.  
 
 ---
 
 ## ⚖️ License  
 This project is **for educational and portfolio purposes**.  
-For inquiries, contact **📧 cs3500.teamone@gmail.com**.  
